@@ -24,11 +24,5 @@ public class RegistrationTest extends BaseTest {
         ActivatedPage activatedPage = new ActivatedPage(driver);
         Assert.assertTrue(activatedPage.isCongratulationDisplayed(),"No message 'Congratulations!'");
 
-
-//        loginPage.clickCheckboxButton();
-//        LoginModel loginModel = PrepareLoginData.getValidLogin();
-//        loginPage.sendLoginForm(loginModel);
-//        ProjectsPage projectsPage = new ProjectsPage(driver);
-//        Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
 }
