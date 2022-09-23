@@ -5,7 +5,6 @@ import constants.Urls;
 import models.LoginModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +49,21 @@ public class LoginPage extends BasePage {
         LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         driver.get(Urls.QASE_LOGIN_PAGE);
         return this;
+    }
+    public ProjectsPage sendNoConfirmUserForm() {
+//        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
+        EMAIL_INPUT.sendKeys(Credentials.EMAIL_NO_CONFIRM);
+        PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_NO_CONFIRM);
+        LOGIN_BUTTON.click();
+        return new ProjectsPage(driver);
+    }
+
+    public ProjectsPage sendAcceptedUserForm() {
+//        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
+        EMAIL_INPUT.sendKeys(Credentials.PASSWORD_VALID);
+        PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_VALID);
+        LOGIN_BUTTON.click();
+        return new ProjectsPage(driver);
     }
 
     public ProjectsPage sendLoginForm(LoginModel loginModel) {

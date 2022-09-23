@@ -23,6 +23,7 @@ public class PrepareRegistrationData {
         LOGGER.debug("Prepare registration model without email");
         return RegistrationModel
                 .builder()
+                .email("")
                 .password(password)
                 .confirmPassword(password)
                 .build();
@@ -34,6 +35,7 @@ public class PrepareRegistrationData {
                 .builder()
                 .email(FakeMessageGenerator.generateEmail())
                 .password(FakeMessageGenerator.generatePassword())
+                .confirmPassword("")
                 .build();
     }
 

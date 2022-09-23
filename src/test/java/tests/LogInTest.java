@@ -10,51 +10,51 @@ import testdata.PrepareLoginData;
 
 public class LogInTest extends BaseTest {
     @Test
-    public void loginValidUserWithCheckbox() {
+    public void loginValidUserWithCheckboxTest() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
-        loginPage.clickCheckboxButton();
         LoginModel loginModel = PrepareLoginData.getValidLogin();
-        loginPage.sendLoginForm(loginModel);
+        loginPage.openLoginPage()
+                .clickCheckboxButton()
+                .sendLoginForm(loginModel);
         ProjectsPage projectsPage = new ProjectsPage(driver);
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
 
     @Test
-    public void loginValidUserWithoutCheckbox() {
+    public void loginValidUserWithoutCheckboxTest() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
         LoginModel loginModel = PrepareLoginData.getValidLogin();
-        loginPage.sendLoginForm(loginModel);
+        loginPage.openLoginPage()
+                .sendLoginForm(loginModel);
         ProjectsPage projectsPage = new ProjectsPage(driver);
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
 
 
     @Test
-    public void loginInvalidEmail() {
+    public void loginInvalidEmailTest() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
         LoginModel loginModel = PrepareLoginData.getFakeEmailLogin();
-        loginPage.sendLoginForm(loginModel);
+        loginPage.openLoginPage()
+                .sendLoginForm(loginModel);
         Assert.assertTrue(loginPage.isErrorMessageDisplayed());
     }
 
     @Test
-    public void loginInvalidPassword() {
+    public void loginInvalidPasswordTest() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
         LoginModel loginModel = PrepareLoginData.getFakePasswordLogin();
-        loginPage.sendLoginForm(loginModel);
+        loginPage.openLoginPage()
+                .sendLoginForm(loginModel);
         Assert.assertTrue(loginPage.isErrorMessageDisplayed());
     }
 
     @Test
     public void loginWithEmptyFields() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openLoginPage();
         LoginModel loginModel = PrepareLoginData.getLoginWithEmptyFieldsLogin();
-        loginPage.sendLoginForm(loginModel);
+        loginPage.openLoginPage()
+                .sendLoginForm(loginModel);
         Assert.assertTrue(loginPage.isErrorMessageDisplayed());
     }
 

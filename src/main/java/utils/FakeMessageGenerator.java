@@ -10,6 +10,25 @@ public class FakeMessageGenerator {
 
     public static String generatePassword() {
         Faker faker = new Faker();
-        return faker.letterify("??????@1");
+        return faker.letterify("????????@1");
+    }
+
+    public static String generateFullName() {
+        Faker faker = new Faker();
+        return faker.name().fullName();
+    }
+    public static String generateJob() {
+        Faker faker = new Faker();
+        return faker.job().title();
+    }
+
+    public static String generateCompanyName() {
+        Faker faker = new Faker();
+        return faker.company().name();
+    }
+
+    public static String generateWorkEmail() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
     }
 }
