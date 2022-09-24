@@ -50,28 +50,28 @@ public class LoginPage extends BasePage {
         driver.get(Urls.QASE_LOGIN_PAGE);
         return this;
     }
-    public ProjectsPage sendNoConfirmUserForm() {
+    public ProjectsListPage sendNoConfirmUserForm() {
 //        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         EMAIL_INPUT.sendKeys(Credentials.EMAIL_NO_CONFIRM);
         PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_NO_CONFIRM);
         LOGIN_BUTTON.click();
-        return new ProjectsPage(driver);
+        return new ProjectsListPage(driver);
     }
 
-    public ProjectsPage sendAcceptedUserForm() {
+    public ProjectsListPage sendAcceptedUserForm() {
 //        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         EMAIL_INPUT.sendKeys(Credentials.PASSWORD_VALID);
         PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_VALID);
         LOGIN_BUTTON.click();
-        return new ProjectsPage(driver);
+        return new ProjectsListPage(driver);
     }
 
-    public ProjectsPage sendLoginForm(LoginModel loginModel) {
+    public ProjectsListPage sendLoginForm(LoginModel loginModel) {
 //        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         EMAIL_INPUT.sendKeys(loginModel.getEmail());
         PASSWORD_INPUT.sendKeys(loginModel.getPassword());
         LOGIN_BUTTON.click();
-        return new ProjectsPage(driver);
+        return new ProjectsListPage(driver);
     }
 
 
@@ -79,11 +79,6 @@ public class LoginPage extends BasePage {
         LOGGER.debug("Enable checkbox 'Remember Me'");
         CHECKBOX_REMEMBER_ME.click();
         return this;
-    }
-    public ProjectsPage clickLoginButton() {
-        LOGGER.debug("Login button click");
-        LOGIN_BUTTON.click();
-        return new ProjectsPage(driver);
     }
 
     public LoginPage signUpButtonClick() {

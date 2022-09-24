@@ -4,7 +4,7 @@ import models.LoginModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.ProjectsPage;
+import pages.ProjectsListPage;
 import testdata.PrepareLoginData;
 
 
@@ -16,7 +16,7 @@ public class LogInTest extends BaseTest {
         loginPage.openLoginPage()
                 .clickCheckboxButton()
                 .sendLoginForm(loginModel);
-        ProjectsPage projectsPage = new ProjectsPage(driver);
+        ProjectsListPage projectsPage = new ProjectsListPage(driver);
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
 
@@ -26,7 +26,7 @@ public class LogInTest extends BaseTest {
         LoginModel loginModel = PrepareLoginData.getValidLogin();
         loginPage.openLoginPage()
                 .sendLoginForm(loginModel);
-        ProjectsPage projectsPage = new ProjectsPage(driver);
+        ProjectsListPage projectsPage = new ProjectsListPage(driver);
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
 

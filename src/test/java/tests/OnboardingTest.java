@@ -4,7 +4,7 @@ import models.OnboardingModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OnboardingPage;
-import pages.ProjectsPage;
+import pages.ProjectsListPage;
 import pages.services.RegistrationOnSite;
 import testdata.PrepareOnboardingData;
 
@@ -18,7 +18,7 @@ public class OnboardingTest extends BaseTest {
         OnboardingModel onboardingModel = PrepareOnboardingData.getOnboardingWithValidData();
         onboardingPage.openOnboardingPage()
                 .sendOnboardingValidData(onboardingModel);
-        ProjectsPage projectsPage = new ProjectsPage(driver);
+        ProjectsListPage projectsPage = new ProjectsListPage(driver);
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed(),"Button 'Create' isn't dispalyed");
     }
 }

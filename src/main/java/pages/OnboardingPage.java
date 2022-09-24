@@ -1,7 +1,7 @@
 package pages;
 
-import Elements.Email;
-import Elements.Radiobutton;
+import elements.Email;
+import elements.Radiobutton;
 import constants.Urls;
 import models.OnboardingModel;
 import org.apache.log4j.LogManager;
@@ -45,7 +45,7 @@ public class OnboardingPage extends BasePage {
         return this;
     }
 
-    public ProjectsPage sendOnboardingValidData(OnboardingModel onboardingModel) {
+    public ProjectsListPage sendOnboardingValidData(OnboardingModel onboardingModel) {
         FULL_NAME_INPUT.sendKeys(onboardingModel.getFullName());
         JOB_TITLE_INPUT.sendKeys(onboardingModel.getTitleJob());
         new Radiobutton(driver, "Role").selectRoleRadiobutton(onboardingModel.getRole());
@@ -56,7 +56,7 @@ public class OnboardingPage extends BasePage {
         BUTTON_SAVE.click();
         new Email(driver, "Email0").sendEmailField(onboardingModel.getWorkEmail());
         BUTTON_SAVE.click();
-        return new ProjectsPage(driver);
+        return new ProjectsListPage(driver);
 
     }
 
