@@ -31,4 +31,18 @@ public class FakeMessageGenerator {
         Faker faker = new Faker();
         return faker.internet().emailAddress();
     }
+    public static String generateProjectName() {
+        Faker faker = new Faker();
+        return faker.funnyName().name();
+    }
+    public static String generateProjectCode() {
+        Faker faker = new Faker();
+        return faker.letterify("?????");
+    }
+
+    public static String generateDescriptionProject() {
+        Faker faker = new Faker();
+        return faker.chuckNorris().fact();
+    }
+
 }

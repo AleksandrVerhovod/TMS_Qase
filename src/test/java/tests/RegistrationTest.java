@@ -16,7 +16,7 @@ public class RegistrationTest extends BaseTest {
         registrationPage.openRegistrationPage()
                 .clickCheckboxAgreePrivacyPolicy()
                 .clickCheckboxNewsletter()
-                .sendRegistrationData(registrationModel);
+                .sendRegistrationForm(registrationModel);
         ActivatedPage activatedPage = new ActivatedPage(driver);
         Assert.assertTrue(activatedPage.isCongratulationDisplayed(),"No message 'Congratulations!'");
     }
@@ -27,7 +27,7 @@ public class RegistrationTest extends BaseTest {
         RegistrationModel registrationModel = PrepareRegistrationData.getRegistrationWithoutEmail();
         registrationPage.openRegistrationPage()
                 .clickCheckboxAgreePrivacyPolicy()
-                .sendRegistrationData(registrationModel);
+                .sendRegistrationForm(registrationModel);
         Assert.assertEquals(registrationPage.errorMessageEmailInput(),"Заполните это поле.");
     }
     @Test
@@ -36,7 +36,7 @@ public class RegistrationTest extends BaseTest {
         RegistrationModel registrationModel = PrepareRegistrationData.getRegistrationDataWithoutConfirmPassword();
         registrationPage.openRegistrationPage()
                 .clickCheckboxAgreePrivacyPolicy()
-                .sendRegistrationData(registrationModel);
+                .sendRegistrationForm(registrationModel);
         Assert.assertEquals(registrationPage.errorMessageConfirmPassInput(),"Заполните это поле.");
     }
 
@@ -46,7 +46,7 @@ public class RegistrationTest extends BaseTest {
         RegistrationModel registrationModel = PrepareRegistrationData.getRegistrationWithNoEqualsPassAndConfirmPass();
         registrationPage.openRegistrationPage()
                 .clickCheckboxAgreePrivacyPolicy()
-                .sendRegistrationData(registrationModel);
+                .sendRegistrationForm(registrationModel);
         Assert.assertTrue(registrationPage.isMessageNotMatchConfirmPassDisplayed(),"No message 'The password confirmation does not match.'");
     }
 

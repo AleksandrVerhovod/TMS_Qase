@@ -9,6 +9,11 @@ public class ProjectRepositoryPage extends BasePage{
     @FindBy (xpath = "//a[@class='defect-title' and text()='Demo Project']")
     private WebElement CREATE_CASE_BUTTON;
 
+    @FindBy (xpath = "//span[text()='Import']")
+    private WebElement IMPORT_BUTTON;
+
+
+
 
     public ProjectRepositoryPage(WebDriver driver) {
         super(driver);
@@ -18,4 +23,11 @@ public class ProjectRepositoryPage extends BasePage{
     public boolean isPageOpened() {
         return CREATE_CASE_BUTTON.isDisplayed();
     }
+
+    public boolean isImportButtonDisplayed() {
+        return IMPORT_BUTTON.isDisplayed();
+    }
+
+
+
 }

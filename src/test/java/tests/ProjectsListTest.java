@@ -13,6 +13,7 @@ public class ProjectsListTest extends BaseTest{
         registrationOnSite.standartLogin();
         ProjectsListPage projectsListPage = new ProjectsListPage(driver);
         projectsListPage.addNewProject();
+
     }
 
     //удаление проекта

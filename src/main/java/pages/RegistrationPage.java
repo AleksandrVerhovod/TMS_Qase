@@ -63,7 +63,7 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
-    public ActivatedPage sendRegistrationData(RegistrationModel registrationModel) {
+    public ActivatedPage sendRegistrationForm(RegistrationModel registrationModel) {
         EMAIL_INPUT.sendKeys(registrationModel.getEmail());
         PASSWORD_INPUT.sendKeys(registrationModel.getPassword());
         CONFIRM_PASSWORD_INPUT.sendKeys(registrationModel.getConfirmPassword());

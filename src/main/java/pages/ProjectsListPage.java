@@ -27,7 +27,7 @@ public class ProjectsListPage extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement DELETE_PROJECT_BUTTON;
 
-    @FindBy (xpath = "//a[text()='DemoQAProject']")
+    @FindBy(xpath = "//a[text()='DemoQAProject']")
     private WebElement NAME_DEMO_QA_PROJECT;
 
     public ProjectsListPage(WebDriver driver) {
@@ -49,24 +49,21 @@ public class ProjectsListPage extends BasePage {
         return this;
     }
 
-    public ProjectsListPage addNewProject() {
+    public CreateProjectPage addNewProject() {
         CREATE_PROJECT_BUTTON.click();
-        //TODO new project page
-        return this;
+        return new CreateProjectPage(driver);
     }
 
-    public ProjectsListPage deleteProject () {
+    public ProjectsListPage deleteProject() {
         DROPDOWN_MENU.click();
         DROPDOWN_DELETE_BUTTON.click();
         DELETE_PROJECT_BUTTON.click();
         return this;
     }
 
-    public boolean isProjectNameDisplayed () {
+    public boolean isProjectNameDisplayed() {
         return NAME_DEMO_QA_PROJECT.isDisplayed();
     }
-
-
 
 
 }
