@@ -60,7 +60,7 @@ public class LoginPage extends BasePage {
 
     public ProjectsListPage sendAcceptedUserForm() {
 //        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
-        EMAIL_INPUT.sendKeys(Credentials.PASSWORD_VALID);
+        EMAIL_INPUT.sendKeys(Credentials.EMAIL_VALID);
         PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_VALID);
         LOGIN_BUTTON.click();
         return new ProjectsListPage(driver);

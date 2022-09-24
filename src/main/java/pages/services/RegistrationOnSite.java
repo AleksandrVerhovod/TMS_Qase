@@ -1,6 +1,5 @@
 package pages.services;
 
-import models.LoginModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +12,7 @@ public class RegistrationOnSite {
         this.driver = driver;
     }
 
-    public void registrationForConfirm() {
+    public void loginForConfirm() {
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.debug(String.format("Page %s initialized", LoginPage.class.getName()));
         LOGGER.debug("Open Registration Page");
@@ -22,7 +21,7 @@ public class RegistrationOnSite {
         loginPage.sendNoConfirmUserForm();
     }
 
-    public void standartRegistration() {
+    public void standartLogin() {
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.debug(String.format("Page %s initialized", LoginPage.class.getName()));
         LOGGER.debug("Open Registration Page");

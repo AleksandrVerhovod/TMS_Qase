@@ -13,7 +13,7 @@ public class OnboardingTest extends BaseTest {
     @Test
     public void inputValidAboutYouOnboardingDataTest() {
         RegistrationOnSite loginService = new RegistrationOnSite(driver);
-        loginService.registrationForConfirm();
+        loginService.loginForConfirm();
         OnboardingPage onboardingPage = new OnboardingPage(driver);
         OnboardingModel onboardingModel = PrepareOnboardingData.getOnboardingWithValidData();
         onboardingPage.openOnboardingPage()
