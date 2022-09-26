@@ -5,4 +5,6 @@ public class Urls {
     public static final String SIGNUP_PAGE = "/signup";
     public static final String ONBOARDING_PAGE = "/onboarding";
 
+    public static final String  PROJECTS_LIST_PAGE = "/projects";
+
 }

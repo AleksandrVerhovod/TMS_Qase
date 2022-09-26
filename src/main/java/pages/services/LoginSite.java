@@ -5,10 +5,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 
-public class RegistrationOnSite {
-    private static final Logger LOGGER = LogManager.getLogger(RegistrationOnSite.class.getName());
+public class LoginSite {
+    private static final Logger LOGGER = LogManager.getLogger(LoginSite.class.getName());
     private final WebDriver driver;
-    public RegistrationOnSite(WebDriver driver) {
+    public LoginSite(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -21,7 +21,7 @@ public class RegistrationOnSite {
         loginPage.sendNoConfirmUserForm();
     }
 
-    public void standartLogin() {
+    public void demoLogin() {
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.debug(String.format("Page %s initialized", LoginPage.class.getName()));
         LOGGER.debug("Open Registration Page");

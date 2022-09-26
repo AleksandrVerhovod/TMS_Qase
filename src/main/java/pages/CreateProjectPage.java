@@ -35,11 +35,11 @@ public class CreateProjectPage extends BasePage {
         return CREATE_PROJECT_BUTTON.isDisplayed();
     }
 
-    public CreateProjectPage sendCreateConstantaProjectForm(CreateProjectModel newProjectModel) {
+    public CreateProjectPage sendCreateConstantaProjectForm() {
         INPUT_PROJECT_NAME.sendKeys(Credentials.DEMO_QA_PROJECT);
         INPUT_PROJECT_CODE.clear();
-        INPUT_PROJECT_CODE.sendKeys(newProjectModel.getProjectCode());
-        INPUT_PROJECT_DESCRIPTION.sendKeys(newProjectModel.getDescriptionProject());
+        INPUT_PROJECT_CODE.sendKeys("DemoCode");
+        INPUT_PROJECT_DESCRIPTION.sendKeys("Description");
         return this;
     }
 

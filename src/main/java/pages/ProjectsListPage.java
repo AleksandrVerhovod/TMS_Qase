@@ -1,7 +1,10 @@
 package pages;
 
+import constants.Urls;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,8 +15,11 @@ public class ProjectsListPage extends BasePage {
     @FindBy(id = "createButton")
     private WebElement CREATE_PROJECT_BUTTON;
 
-    @FindBy(xpath = "//a[text()='Demo Project']//ancestor::tr//button[@class='project-favorite-button']")
-    private WebElement FAVORITE_PROJECT_BUTTON;
+    @FindBy(xpath = "//a[text()='Demo Project']//ancestor::tr//button[@class='project-favorite-button']//i")
+    private WebElement FAVORITE_PROJECT_BUTTON_NO_ACTIVE;
+
+    @FindBy(xpath = "//a[text()='Demo Project']//ancestor::tr//button[@class='project-favorite-button active']//i")
+    private WebElement FAVORITE_PROJECT_BUTTON_ACTIVE;
 
     @FindBy(xpath = "//a[@class='defect-title' and text()='Demo Project']")
     private WebElement SELECT_PROJECT;
@@ -44,9 +50,20 @@ public class ProjectsListPage extends BasePage {
         return CREATE_PROJECT_BUTTON.isDisplayed();
     }
 
-    public ProjectsListPage activateFavoriteProject() {
-        FAVORITE_PROJECT_BUTTON.click();
+    public ProjectsListPage openProjectsListPage() {
+        driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.PROJECTS_LIST_PAGE));
         return this;
+    }
+
+    public ProjectsListPage activateFavoriteProject() {
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", FAVORITE_PROJECT_BUTTON_NO_ACTIVE);
+         return this;
+    }
+
+    public boolean isFavoriteButtonActiveDispalyed() {
+        return FAVORITE_PROJECT_BUTTON_ACTIVE.isDisplayed();
+
     }
 
     public CreateProjectPage addNewProject() {
@@ -62,8 +79,11 @@ public class ProjectsListPage extends BasePage {
     }
 
     public boolean isProjectNameDisplayed() {
-        return NAME_DEMO_QA_PROJECT.isDisplayed();
+        try {
+            return NAME_DEMO_QA_PROJECT.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
-
 
 }

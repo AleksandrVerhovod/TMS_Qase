@@ -6,15 +6,15 @@ import org.testng.annotations.Test;
 import pages.CreateProjectPage;
 import pages.ProjectRepositoryPage;
 import pages.ProjectsListPage;
-import pages.services.RegistrationOnSite;
+import pages.services.LoginSite;
 import testdata.PrepareCreateProjectData;
 
 public class CreateProjectTest extends BaseTest {
 
     @Test
     public void createNewProjectTest() {
-        RegistrationOnSite registrationOnSite = new RegistrationOnSite(driver);
-        registrationOnSite.standartLogin();
+        LoginSite loginSite = new LoginSite(driver);
+        loginSite.demoLogin();
         ProjectsListPage projectsListPage = new ProjectsListPage(driver);
         projectsListPage.addNewProject();
         CreateProjectPage createProjectPage = new CreateProjectPage(driver);
