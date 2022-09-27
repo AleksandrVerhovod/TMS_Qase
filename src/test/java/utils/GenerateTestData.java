@@ -2,6 +2,7 @@ package utils;
 
 import com.github.javafaker.Faker;
 import constants.dropdownoptions.Milestones;
+import constants.dropdownoptions.Role;
 import constants.dropdownoptions.Severity;
 
 import java.util.List;
@@ -27,6 +28,11 @@ public class GenerateTestData {
     }
 
 
+    public static String getRoleUser () {
+        List<String> roleUser = Role.getRole();
+        return roleUser.get(getRandomIndex(roleUser.size()));
+    }
+
     public static String generateEmail() {
         faker = new Faker();
         return faker.internet().emailAddress();
@@ -37,6 +43,7 @@ public class GenerateTestData {
         return faker.letterify("????????@1");
     }
 
+
     public static String generateFullName() {
         faker = new Faker();
         return faker.name().fullName();
@@ -44,6 +51,11 @@ public class GenerateTestData {
     public static String generateJob() {
         faker = new Faker();
         return faker.job().title();
+    }
+
+    public static String generateRoleTitle() {
+        faker = new Faker();
+        return faker.job().position();
     }
 
     public static String generateCompanyName() {

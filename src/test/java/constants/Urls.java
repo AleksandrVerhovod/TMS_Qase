@@ -11,4 +11,6 @@ public class Urls {
 
     public static final String  PROJECTS_LIST_PAGE = "/projects";
 
+    public static final String INVITES_PAGE = "/workspace/invites";
+
 }

@@ -1,8 +1,28 @@
 package tests;
 
-public class InvitesTest {
+import models.InventNewUserModel;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.InvitesPage;
+import pages.services.LoginSite;
+import testdata.PrepareInviteNewUser;
 
-    //InviteNewMember
+public class InvitesTest extends BaseTest{
 
+@Test
+    public void inviteNewValidMember () {
+    LoginSite loginSite = new LoginSite(driver);
+    loginSite.demoLogin();
+    InvitesPage invitesPage = new InvitesPage(driver);
+    InventNewUserModel inventNewUserModel = PrepareInviteNewUser.getInventNewUserModel();
+    invitesPage.openInvitesPage()
+            .clickInviteNewMember()
+            .sendInviteNewUserForm(inventNewUserModel);
+    Assert.assertTrue(invitesPage.isConfirmationMessageInvitedDisplayed(), "No confirmation message on display");
+
+
+
+
+}
 
 }

@@ -1,6 +1,6 @@
 package tests;
 
-public class RepositoryProjectTest {
+public class TestSuiteProjectTest {
 
     //Add/Delete Suite
 
