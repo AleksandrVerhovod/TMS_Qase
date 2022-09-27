@@ -1,18 +1,17 @@
 package pages;
 
+import constants.Urls;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProjectRepositoryPage extends BasePage{
+public class ProjectRepositoryPage extends BasePage {
 
-    @FindBy (xpath = "//a[@class='defect-title' and text()='Demo Project']")
+    @FindBy(xpath = "//a[@id='create-case-button']")
     private WebElement CREATE_CASE_BUTTON;
 
-    @FindBy (xpath = "//span[text()='Import']")
+    @FindBy(xpath = "//span[text()='Import']")
     private WebElement IMPORT_BUTTON;
-
-
 
 
     public ProjectRepositoryPage(WebDriver driver) {
@@ -28,6 +27,15 @@ public class ProjectRepositoryPage extends BasePage{
         return IMPORT_BUTTON.isDisplayed();
     }
 
+    public ProjectRepositoryPage openProjectRepositoryPage() {
+        driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.PROJECT_PAGE));
+        return this;
+    }
+
+    public CreateTestCasePage clickAddTestCase() {
+        CREATE_CASE_BUTTON.click();
+        return new CreateTestCasePage(driver);
+    }
 
 
 }

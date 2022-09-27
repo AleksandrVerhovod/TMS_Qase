@@ -1,7 +1,7 @@
 package pages;
 
 import constants.Urls;
-import elements.Dropdown;
+import elements.Dropdowns;
 import models.CreateDefectModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -60,8 +60,8 @@ public class DefectsPage extends BasePage {
     public DefectsPage sendCreateDefectForm(CreateDefectModel createDefectModel) {
         DEFECT_TITLE_INPUT.sendKeys(createDefectModel.getDefectTitle());
         ACTUAL_RESULT_INPUT.sendKeys(createDefectModel.getActualResult());
-        new Dropdown(driver).selectMilestoneDefect(createDefectModel.getMilestone());
-        new Dropdown(driver).selectSeverityDefect(createDefectModel.getSeverity());
+        new Dropdowns(driver).selectMilestoneDefect(createDefectModel.getMilestone());
+        new Dropdowns(driver).selectSeverityDefect(createDefectModel.getSeverity());
         return this;
     }
 

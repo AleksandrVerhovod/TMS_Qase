@@ -8,11 +8,9 @@ public class Radiobutton {
     private static final String ROLE_BUTTON_XPATH = "//label[@class='form-check-label' and @for='role-%s']";
     private static final String INDUSTRY_BUTTONS_XPATH = "//label[@class='form-check-label' and @for='industry-%s']";
     private static final String DESCRIBE_BUTTONS_XPATH = "//label[@class='form-check-label' and @for='company-type-%s']";
-    private String labelText;
     private WebDriver driver;
 
     public Radiobutton(WebDriver driver,String labelText) {
-        this.labelText = labelText;
         this.driver = driver;
     }
 

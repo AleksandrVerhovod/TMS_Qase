@@ -1,7 +1,7 @@
 package pages;
 
 import constants.Urls;
-import elements.Dropdown;
+import elements.Dropdowns;
 import models.InventNewUserModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,7 +60,7 @@ public class InvitesPage extends BasePage {
         EMAIL_INPUT.sendKeys(GenerateTestData.generateEmail());
         NAME_INPUT.sendKeys(GenerateTestData.generateFullName());
         ROLE_TITLE_INPUT.sendKeys(GenerateTestData.generateRoleTitle());
-        new Dropdown(driver).selectRoleUser(inventNewUserModel.getRole());
+        new Dropdowns(driver).selectRoleUser(inventNewUserModel.getRole());
         INVITE_BUTTON.click();
         return this;
     }
