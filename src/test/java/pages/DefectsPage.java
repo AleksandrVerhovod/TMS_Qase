@@ -60,8 +60,8 @@ public class DefectsPage extends BasePage {
     public DefectsPage sendCreateDefectForm(CreateDefectModel createDefectModel) {
         DEFECT_TITLE_INPUT.sendKeys(createDefectModel.getDefectTitle());
         ACTUAL_RESULT_INPUT.sendKeys(createDefectModel.getActualResult());
-        new Dropdowns(driver).selectMilestoneDefect(createDefectModel.getMilestone());
-        new Dropdowns(driver).selectSeverityDefect(createDefectModel.getSeverity());
+        new Dropdowns(driver,"Milestone").selectOptionDefect(createDefectModel.getMilestone());
+        new Dropdowns(driver,"Severity").selectOptionDefect(createDefectModel.getSeverity());
         return this;
     }
 

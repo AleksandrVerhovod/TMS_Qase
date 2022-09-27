@@ -5,39 +5,20 @@ import org.openqa.selenium.WebDriver;
 
 public class Dropdowns {
     private WebDriver driver;
-
-    public Dropdowns(WebDriver driver) {
+    private String labelText;
+    public Dropdowns(WebDriver driver, String labelText) {
+        this.labelText = labelText;
         this.driver = driver;
     }
-
     //milestone
-    private static final String MILESTONE_DEFECT_DROPDOWN_XPATH = "//div[@id='milestoneGroup']//div";
-    private static final String SELECT_MILESTONE_DEFECTS_XPATH = "//div[contains(@id, 'react') and text()='%s']";
+    private static final String BUTTON_XPATH = "//label[contains(@class,'control-label') and text()='%s']//..//div[1]";
+    private static final String SELECT_OPTION_XPATH = "//div[contains(@id, 'react') and text()='%s']";
 
-    public void selectMilestoneDefect(String option) {
-        driver.findElement(By.xpath(MILESTONE_DEFECT_DROPDOWN_XPATH)).click();
-        String listFinalXpath = String.format(SELECT_MILESTONE_DEFECTS_XPATH, option);
-        driver.findElement(By.xpath(listFinalXpath)).click();
-    }
-
-    //severity
-    private static final String SEVERITY_XPATH = "//div[@id='severityGroup']//div";
-    private static final String SELECT_SEVERITY_XPATH = "//div[contains(@id, 'react-select') and text() = '%s']";
-
-    public void selectSeverityDefect(String option) {
-        driver.findElement(By.xpath(SEVERITY_XPATH)).click();
-        String listFinalXpath = String.format(SELECT_SEVERITY_XPATH, option);
-        driver.findElement(By.xpath(listFinalXpath)).click();
-    }
-
-    //role invite user
-    private static final String ROLE_USER_DROPDOWN = "//*[@id=\"roleGroup\"]/div[1]/div";
-    private static final String SELECT_ROLE_INVITE_USER_XPATH = "//div[contains(@id,'react-select') and text()='%s']";
-
-    public void selectRoleUser(String option) {
-        driver.findElement(By.xpath(ROLE_USER_DROPDOWN)).click();
-        String listFinalXpath = String.format(SELECT_ROLE_INVITE_USER_XPATH, option);
-        driver.findElement(By.xpath(listFinalXpath)).click();
+    public void selectOptionDefect(String option) {
+        String buttonFinalXpath = String.format(BUTTON_XPATH, labelText);
+        driver.findElement(By.xpath(buttonFinalXpath)).click();
+        String optionFinalXpath = String.format(SELECT_OPTION_XPATH, option);
+        driver.findElement(By.xpath(optionFinalXpath)).click();
     }
 
 

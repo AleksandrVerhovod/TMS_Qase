@@ -60,7 +60,7 @@ public class InvitesPage extends BasePage {
         EMAIL_INPUT.sendKeys(GenerateTestData.generateEmail());
         NAME_INPUT.sendKeys(GenerateTestData.generateFullName());
         ROLE_TITLE_INPUT.sendKeys(GenerateTestData.generateRoleTitle());
-        new Dropdowns(driver).selectRoleUser(inventNewUserModel.getRole());
+        new Dropdowns(driver,"Role").selectOptionDefect(inventNewUserModel.getRole());
         INVITE_BUTTON.click();
         return this;
     }
