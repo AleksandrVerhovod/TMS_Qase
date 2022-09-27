@@ -2,7 +2,7 @@ package testdata;
 
 import constants.Credentials;
 import models.LoginModel;
-import utils.FakeMessageGenerator;
+import utils.GenerateTestData;
 
 public class PrepareLoginData {
 
@@ -17,7 +17,7 @@ public class PrepareLoginData {
     public static LoginModel getFakeEmailLogin() {
         return LoginModel
                 .builder()
-                .email(FakeMessageGenerator.generateEmail())
+                .email(GenerateTestData.generateEmail())
                 .password(Credentials.PASSWORD_VALID)
                 .build();
     }
@@ -26,7 +26,7 @@ public class PrepareLoginData {
         return LoginModel
                 .builder()
                 .email(Credentials.EMAIL_VALID)
-                .password(FakeMessageGenerator.generatePassword())
+                .password(GenerateTestData.generatePassword())
                 .build();
     }
 

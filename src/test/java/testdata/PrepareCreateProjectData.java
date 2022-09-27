@@ -2,17 +2,16 @@ package testdata;
 
 import constants.Credentials;
 import models.CreateProjectModel;
-import models.RegistrationModel;
-import utils.FakeMessageGenerator;
+import utils.GenerateTestData;
 
 public class PrepareCreateProjectData {
 
     public static CreateProjectModel getCreateProjectWithValidData() {
         return CreateProjectModel
                 .builder()
-                .projectName(FakeMessageGenerator.generateProjectName())
-                .projectCode(FakeMessageGenerator.generateProjectCode())
-                .descriptionProject(FakeMessageGenerator.generateDescriptionProject())
+                .projectName(GenerateTestData.generateProjectName())
+                .projectCode(GenerateTestData.generateProjectCode())
+                .descriptionProject(GenerateTestData.generateDescriptionProject())
                 .build();
     }
 
@@ -20,8 +19,8 @@ public class PrepareCreateProjectData {
         return CreateProjectModel
                 .builder()
                 .projectName(Credentials.DEMO_QA_PROJECT)
-                .projectCode(FakeMessageGenerator.generateProjectCode())
-                .descriptionProject(FakeMessageGenerator.generateDescriptionProject())
+                .projectCode(GenerateTestData.generateProjectCode())
+                .descriptionProject(GenerateTestData.generateDescriptionProject())
                 .build();
     }
 }

@@ -3,7 +3,7 @@ package testdata;
 import models.OnboardingModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import utils.FakeMessageGenerator;
+import utils.GenerateTestData;
 
 public class PrepareOnboardingData {
 
@@ -12,13 +12,13 @@ public class PrepareOnboardingData {
         LOGGER.debug("Prepare onboarding about you model with valid information");
         return OnboardingModel
                 .builder()
-                .fullName(FakeMessageGenerator.generateFullName())
-                .titleJob(FakeMessageGenerator.generateJob())
+                .fullName(GenerateTestData.generateFullName())
+                .titleJob(GenerateTestData.generateJob())
                 .role("developer")
-                .companyName(FakeMessageGenerator.generateCompanyName())
+                .companyName(GenerateTestData.generateCompanyName())
                 .companyDescribe("own_product")
                 .companyIndustry("retail")
-                .workEmail(FakeMessageGenerator.generateWorkEmail())
+                .workEmail(GenerateTestData.generateWorkEmail())
                 .build();
     }
 
