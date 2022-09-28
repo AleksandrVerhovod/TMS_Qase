@@ -11,8 +11,10 @@ public class DropdownTestCase {
         this.labelText = labelText;
         this.driver = driver;
     }
-    private static final String BUTTON_XPATH = "//label[@class='required' and text()='%s']//..//button[@type='button']";
-    private static final String SELECT_OPTION_XPATH = "//div[@id='modals']//div[text()='%s']";
+    //@class='required' and  - BUTTON
+    private static final String BUTTON_XPATH = "//label[text()='%s']//..//button[@type='button']";
+    private static final String SELECT_OPTION_XPATH = "//div[text()='%s']";
+    private static final String BUTTON_MILESTONE_XPATH = "//div[contains(@class,'row')]//label[text()='Milestone']//..//span[@aria-live='polite']//..";
 
     public void selectOptionsInTestCase(String option) {
         String buttonFinalXpath = String.format(BUTTON_XPATH, labelText);
@@ -20,5 +22,14 @@ public class DropdownTestCase {
         String optionFinalXpath = String.format(SELECT_OPTION_XPATH, option);
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
+
+    public void selectOptionsMilestoneInTestCase(String option) {
+        String buttonFinalXpath = String.format(BUTTON_MILESTONE_XPATH, labelText);
+        driver.findElement(By.xpath(buttonFinalXpath)).click();
+        String optionFinalXpath = String.format(SELECT_OPTION_XPATH, option);
+        driver.findElement(By.xpath(optionFinalXpath)).click();
+    }
+
+
 
 }

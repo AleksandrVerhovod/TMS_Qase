@@ -10,6 +10,7 @@ public class PrepareCreateTestCase {
         return CreateTestCaseModel
                 .builder()
                 .title(GenerateTestData.generateTitle())
+                .suite(GenerateTestData.getSuiteTestCase())
                 .status(GenerateTestData.getStatusTestCase())
                 .description(GenerateTestData.generateDescription())
                 .severity(GenerateTestData.getSeverity())
@@ -17,10 +18,15 @@ public class PrepareCreateTestCase {
                 .type(GenerateTestData.getTypeTestCase())
                 .layer(GenerateTestData.getLayerTestCase())
                 .isFlaky(GenerateTestData.getIsFlakyTestCase())
+                .milestone(GenerateTestData.getIsMilestoneDemo())
                 .behavior(GenerateTestData.getBehaviorTestCase())
                 .automationStatus(GenerateTestData.getAutomationStatusTestCase())
                 .preCondition(GenerateTestData.generatePreConditions())
                 .postConditions(GenerateTestData.generatePostConditions())
+                .steps("Classic")
+                .action(GenerateTestData.generateActionStepTestCase())
+                .inputData(GenerateTestData.generateDataStepTestCase())
+                .expectedResult(GenerateTestData.generateExpectedResultTestCase())
                 .build();
     }
 }

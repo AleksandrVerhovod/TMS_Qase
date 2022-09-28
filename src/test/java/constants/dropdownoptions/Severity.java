@@ -12,7 +12,6 @@ public class Severity {
                 "Major",
                 "Normal",
                 "Minor",
-                "Trivial",
-                "Release 1.1");
+                "Trivial");
     }
 }

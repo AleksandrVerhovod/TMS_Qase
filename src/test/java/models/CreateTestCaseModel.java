@@ -9,6 +9,7 @@ public class CreateTestCaseModel {
     private String title;
     private String status;
     private String description;
+    private String suite;
     private String severity;
     private String priority;
     private String type;
@@ -19,4 +20,9 @@ public class CreateTestCaseModel {
     private String automationStatus;
     private String preCondition;
     private String postConditions;
+    private String steps;
+    private String action;
+    private String inputData;
+    private String expectedResult;
+
 }

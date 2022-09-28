@@ -1,6 +1,7 @@
 package tests;
 
 import models.CreateRequirementsModel;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CreateRequirementsPage;
 import pages.services.LoginSite;
@@ -17,6 +18,7 @@ public class CreateRequirementsTest extends BaseTest {
         createRequirementsPage.openCreateReqPage()
                 .clickCreateReqButton()
                 .fillNewRequirement(createRequirementsModel);
+        Assert.assertTrue(createRequirementsPage.getTitleRequirements(createRequirementsModel.getTitle()));
 
 
 

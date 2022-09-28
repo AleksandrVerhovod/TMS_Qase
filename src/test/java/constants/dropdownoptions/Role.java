@@ -7,6 +7,6 @@ public class Role {
     public static List<String> getRole() {
         return Arrays.asList(
                 "Administrator",
-                "Memeber");
+                "Member");
     }
 }

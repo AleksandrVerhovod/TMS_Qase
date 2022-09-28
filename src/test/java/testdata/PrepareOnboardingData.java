@@ -18,7 +18,7 @@ public class PrepareOnboardingData {
                 .companyName(GenerateTestData.generateCompanyName())
                 .companyDescribe("own_product")
                 .companyIndustry("retail")
-                .workEmail(GenerateTestData.generateWorkEmail())
+                .workEmail(GenerateTestData.getEmail())
                 .build();
     }
 

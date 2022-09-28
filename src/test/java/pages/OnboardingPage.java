@@ -54,7 +54,7 @@ public class OnboardingPage extends BasePage {
         new Radiobutton(driver, "CompanyDescribe").selectDescribesRadiobutton(onboardingModel.getCompanyDescribe());
         new Radiobutton(driver, "CompanyIndustry").selectIndustryRadiobutton(onboardingModel.getCompanyIndustry());
         BUTTON_SAVE.click();
-        new Email(driver, "Email0").sendEmailField(onboardingModel.getWorkEmail());
+        new Email(driver).sendEmailField(onboardingModel.getWorkEmail());
         BUTTON_SAVE.click();
         return new ProjectsListPage(driver);
 

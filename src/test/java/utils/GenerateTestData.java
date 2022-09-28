@@ -2,7 +2,6 @@ package utils;
 
 import com.github.javafaker.Faker;
 import constants.dropdownoptions.*;
-import elements.DropdownTestCase;
 
 import java.util.List;
 import java.util.Random;
@@ -16,8 +15,8 @@ public class GenerateTestData {
         return random.nextInt(listSize);
     }
 
-    public static String getMilestone () {
-        List<String> milestones = Milestones.getMelistones();
+    public static String getMilestoneQase() {
+        List<String> milestones = MilestonesQase.getMelistonesQase();
                 return milestones.get(getRandomIndex(milestones.size()));
     }
 
@@ -37,9 +36,9 @@ public class GenerateTestData {
         return status.get(getRandomIndex(status.size()));
     }
 
-    public static String getSeverityTestCase() {
-        List<String> severity = Severity.getSeverity();
-        return severity.get(getRandomIndex(severity.size()));
+    public static String getSuiteTestCase() {
+        List<String> suite = SuiteForTestCase.getSuite();
+        return suite.get(getRandomIndex(suite.size()));
     }
 
     public static String getPriorityTestCase() {
@@ -56,7 +55,10 @@ public class GenerateTestData {
         List<String> layer = Layer.getLayer();
         return layer.get(getRandomIndex(layer.size()));
     }
-
+    public static String getIsMilestoneDemo() {
+        List<String> milestone = MilestonesDemo.getMelistonesDemo();
+        return milestone.get(getRandomIndex(milestone.size()));
+    }
     public static String getIsFlakyTestCase() {
         List<String> flaky = IsFlaky.getIsFlaky();
         return flaky.get(getRandomIndex(flaky.size()));
@@ -85,6 +87,11 @@ public class GenerateTestData {
     public static String getTypeReq () {
         List<String> type = TypeRequirement.getTypeReq();
         return type.get(getRandomIndex(type.size()));
+    }
+
+    public static String getEmail () {
+        List<String> email = Emails.getEmail();
+        return email.get(getRandomIndex(email.size()));
     }
 
     public static String generateEmail() {
@@ -164,6 +171,23 @@ public class GenerateTestData {
         faker = new Faker();
         return faker.harryPotter().character();
     }
+
+    public static String generateActionStepTestCase() {
+        faker = new Faker();
+        return faker.funnyName().name();
+    }
+
+    public static String generateDataStepTestCase() {
+        faker = new Faker();
+        return String.valueOf(faker.date().birthday());
+    }
+
+    public static String generateExpectedResultTestCase() {
+        faker = new Faker();
+        return faker.chuckNorris().fact();
+    }
+
+
 
 
 

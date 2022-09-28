@@ -10,7 +10,7 @@ public class PrepareCreateDefectData {
                 .builder()
                 .defectTitle(GenerateTestData.generateDefectTitle())
                 .actualResult(GenerateTestData.generateActualResultDefect())
-                .milestone(GenerateTestData.getMilestone())
+                .milestone(GenerateTestData.getMilestoneQase())
                 .severity(GenerateTestData.getSeverity())
                 .build();
     }
