@@ -11,7 +11,7 @@ import testdata.PrepareCreateTestCase;
 public class CreateTestCaseTest extends BaseTest {
 
     @Test
-    public void inviteNewValidMember() {
+    public void createTestSuiteValidDateTest() {
         LoginSite loginSite = new LoginSite(driver);
         loginSite.demoLogin();
         ProjectRepositoryPage projectRepositoryPage = new ProjectRepositoryPage(driver);

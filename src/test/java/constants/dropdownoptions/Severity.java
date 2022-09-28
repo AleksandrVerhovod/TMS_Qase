@@ -6,7 +6,7 @@ import java.util.List;
 public class Severity {
     public static List<String> getSeverity () {
         return Arrays.asList(
-                "Not Set",
+                "Not set",
                 "Blocker",
                 "Critical",
                 "Major",

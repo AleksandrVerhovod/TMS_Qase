@@ -10,7 +10,7 @@ import testdata.PrepareInviteNewUser;
 public class InvitesTest extends BaseTest{
 
 @Test
-    public void inviteNewValidMember () {
+    public void inviteNewValidMemberTest() {
     LoginSite loginSite = new LoginSite(driver);
     loginSite.demoLogin();
     InvitesPage invitesPage = new InvitesPage(driver);

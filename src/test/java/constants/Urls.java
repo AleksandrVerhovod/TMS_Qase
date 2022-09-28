@@ -15,4 +15,6 @@ public class Urls {
 
     public static final String CREATE_TEST_CASE = "/case/DP/create/1";
 
+    public static final String CREATE_REQUIREMENTS = "/requirement/DP";
+
 }

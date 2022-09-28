@@ -10,6 +10,8 @@ public class ProjectRepositoryPage extends BasePage {
     @FindBy(xpath = "//a[@id='create-case-button']")
     private WebElement CREATE_CASE_BUTTON;
 
+    @FindBy(xpath = "//a[@id='create-suite-button']")
+    private WebElement CREATE_SUITE_BUTTON;
     @FindBy(xpath = "//span[text()='Import']")
     private WebElement IMPORT_BUTTON;
 
@@ -34,6 +36,11 @@ public class ProjectRepositoryPage extends BasePage {
 
     public CreateTestCasePage clickAddTestCase() {
         CREATE_CASE_BUTTON.click();
+        return new CreateTestCasePage(driver);
+    }
+
+    public CreateTestCasePage clickAddTestSuite() {
+        CREATE_SUITE_BUTTON.click();
         return new CreateTestCasePage(driver);
     }
 

@@ -72,6 +72,21 @@ public class GenerateTestData {
         return autoStatus.get(getRandomIndex(autoStatus.size()));
     }
 
+    public static String getParent () {
+        List<String> parent = ParentRequirements.getParent();
+        return parent.get(getRandomIndex(parent.size()));
+    }
+
+    public static String getStatusReq () {
+        List<String> status = StatusRequirements.getStatusReq();
+        return status.get(getRandomIndex(status.size()));
+    }
+
+    public static String getTypeReq () {
+        List<String> type = TypeRequirement.getTypeReq();
+        return type.get(getRandomIndex(type.size()));
+    }
+
     public static String generateEmail() {
         faker = new Faker();
         return faker.internet().emailAddress();
