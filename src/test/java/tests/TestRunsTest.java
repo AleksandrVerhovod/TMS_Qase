@@ -1,8 +1,25 @@
 package tests;
 
-public class TestRunsTest {
+import models.TestRunsModel;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pages.TestRunsPage;
+import pages.services.LoginSite;
+import testdata.PrepareTestRuns;
 
-    //Start new TestRun
+public class TestRunsTest extends BaseTest {
 
-    //Delete TestRun
+    @Test
+    public void createTestSuiteValidDateTest() {
+        LoginSite loginSite = new LoginSite(driver);
+        loginSite.demoLogin();
+        TestRunsPage testRunsPage = new TestRunsPage(driver);
+        TestRunsModel testRunsModel = PrepareTestRuns.getTestRunModelValidData();
+        testRunsPage.openTestRunsPage()
+                .clickStartNewTestRun()
+                .fillStartTestRunForm(testRunsModel)
+                .clickStartTestRun();
+        Assert.assertTrue(testRunsPage.isConfirmationMessageDispalyed(),"No confirmation message created test run");
+
+    }
 }
