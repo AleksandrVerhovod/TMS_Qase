@@ -30,7 +30,7 @@ public class ProjectsListPage extends BasePage {
     @FindBy(xpath = "//a[text()='DemoQAProject']//ancestor::tr//div[@class='dropdown']//a[text()='Delete']")
     private WebElement DROPDOWN_DELETE_BUTTON;
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//button[@type='submit']//i")
     private WebElement DELETE_PROJECT_BUTTON;
 
     @FindBy(xpath = "//a[text()='DemoQAProject']")

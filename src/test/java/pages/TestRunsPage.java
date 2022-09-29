@@ -19,6 +19,8 @@ public class TestRunsPage extends BasePage {
     @FindBy(xpath = "//button[@id='save-run-button']")
     private WebElement START_RUN_BUTTON;
 
+
+
     @FindBy(xpath = "//span[text()='Run was created successfully!']")
     private WebElement CONFIRMATION_MESSAGE_CREATE_TC;
 
@@ -55,7 +57,7 @@ public class TestRunsPage extends BasePage {
         new DropdownTestRun(driver, "Environment").selectOptionTestRun(testRunsModel.getEnvironment());
         new DropdownTestRun(driver, "Milestone").selectOptionTestRun(testRunsModel.getMilestone());
         new DropdownTestRun(driver, "Default assignee").selectDefaultAssigneeTestRun(testRunsModel.getDefaultAssignee());
-        js.executeScript("arguments[0].scrollIntoView(true)", ADD_CASES_BUTTON);
+        js.executeScript("arguments[0].scrollIntoView()", ADD_CASES_BUTTON);
         ADD_CASES_BUTTON.click();
         DONE_TC_ADDED_BUTTON.click();
         return this;

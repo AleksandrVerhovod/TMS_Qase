@@ -32,7 +32,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[@class='form-control-feedback']")
     private WebElement ERROR_MESSAGE;
 
-    @FindBy(xpath = "//div[@class='form-control-feedback']")
+    @FindBy(xpath = "")
     private WebElement POPUP_MESSAGE;
 
     public LoginPage(WebDriver driver) {
@@ -81,11 +81,11 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage signUpButtonClick() {
-        LOGGER.debug("SignUp button click");
-        SIGN_UP_BUTTON.click();
-        return this;
-    }
+        public LoginPage signUpButtonClick() {
+            LOGGER.debug("SignUp button click");
+            SIGN_UP_BUTTON.click();
+            return this;
+        }
 
     public LoginPage forgotYourPasswordButtonClick() {
         LOGGER.debug("ForgotYourPassword button click");
@@ -98,9 +98,10 @@ public class LoginPage extends BasePage {
         return ERROR_MESSAGE.isDisplayed();
     }
 
-    public boolean isPopupMessageDisplayed() {
+    public String isErrorMessage() {
         LOGGER.debug("Error message is displayed");
-        return POPUP_MESSAGE.isDisplayed();
+        return EMAIL_INPUT.getAttribute("validationMessage");
     }
+
 
 }

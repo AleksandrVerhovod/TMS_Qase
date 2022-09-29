@@ -10,7 +10,7 @@ import testdata.PrepareTestRuns;
 public class TestRunsTest extends BaseTest {
 
     @Test
-    public void createTestSuiteValidDateTest() {
+    public void createTestRunValidDateTest() {
         LoginSite loginSite = new LoginSite(driver);
         loginSite.demoLogin();
         TestRunsPage testRunsPage = new TestRunsPage(driver);

@@ -18,7 +18,7 @@ public class RegistrationTest extends BaseTest {
                 .clickCheckboxNewsletter()
                 .sendRegistrationForm(registrationModel);
         ActivatedPage activatedPage = new ActivatedPage(driver);
-        Assert.assertTrue(activatedPage.isCongratulationDisplayed(),"No message 'Congratulations!'");
+        Assert.assertTrue(activatedPage.isReceivedButtonDisplayed(),"No button 'I didn't receive any email'");
     }
 
     @Test

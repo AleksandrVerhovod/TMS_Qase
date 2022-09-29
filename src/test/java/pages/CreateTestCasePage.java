@@ -13,6 +13,16 @@ public class CreateTestCasePage extends BasePage {
 
     @FindBy(id = "title")
     private WebElement TITLE_TEST_CASE;
+    @FindBy (xpath = "//label[text()='Priority']//..//button[@type='button']")
+    private WebElement PRIORITY;
+
+    @FindBy (xpath = "//label[text()='Type']//..//button[@type='button']")
+    private WebElement TYPE;
+
+    @FindBy(xpath = "//div[contains(@class,'row')]//label[text()='Milestone']//..//span[@aria-live='polite']//..")
+    private WebElement MILESTONE;
+
+
 
     @FindBy(id = "save-case")
     private WebElement SAVE_BUTTON;
@@ -54,19 +64,22 @@ public class CreateTestCasePage extends BasePage {
         new TextArea(driver, "Description").inputTextArea(newTestCase.getDescription());
         new DropdownTestCase(driver, "Suite").selectOptionsInTestCase(newTestCase.getSuite());
         new DropdownTestCase(driver, "Severity").selectOptionsInTestCase(newTestCase.getSeverity());
+        js.executeScript("arguments[0].scrollIntoView()", PRIORITY);
         new DropdownTestCase(driver, "Priority").selectOptionsInTestCase(newTestCase.getPriority());
+        js.executeScript("arguments[0].scrollIntoView()", TYPE);
         new DropdownTestCase(driver, "Type").selectOptionsInTestCase(newTestCase.getType());
         new DropdownTestCase(driver, "Layer").selectOptionsInTestCase(newTestCase.getLayer());
         new DropdownTestCase(driver, "Is flaky").selectOptionsInTestCase(newTestCase.getIsFlaky());
+        js.executeScript("arguments[0].scrollIntoView()", MILESTONE);
         new DropdownTestCase(driver, "Milestone").selectOptionsMilestoneInTestCase(newTestCase.getMilestone());
         new DropdownTestCase(driver, "Behavior").selectOptionsInTestCase(newTestCase.getBehavior());
         new DropdownTestCase(driver, "Automation status").selectOptionsInTestCase(newTestCase.getAutomationStatus());
         new TextArea(driver, "Pre-conditions").inputTextArea(newTestCase.getPreCondition());
         new TextArea(driver, "Post-conditions").inputTextArea(newTestCase.getPostConditions());
-        js.executeScript("arguments[0].scrollIntoView(true)", SAVE_BUTTON);
+        js.executeScript("arguments[0].scrollIntoView()", BUTTON_STEPS);
         BUTTON_STEPS.click();
         SELECT_STEPS_OPTION.click();
-        js.executeScript("arguments[0].scrollIntoView(true)", ADD_STEPS_BUTTON);
+        js.executeScript("arguments[0].scrollIntoView()", ADD_STEPS_BUTTON);
         ADD_STEPS_BUTTON.click();
         new TextArea(driver, "Action").inputTextArea(newTestCase.getAction());
         new TextArea(driver, "Input data").inputTextArea(newTestCase.getInputData());

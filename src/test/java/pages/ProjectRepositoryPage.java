@@ -12,7 +12,7 @@ public class ProjectRepositoryPage extends BasePage {
 
     @FindBy(xpath = "//a[@id='create-suite-button']")
     private WebElement CREATE_SUITE_BUTTON;
-    @FindBy(xpath = "//span[text()='Import']")
+    @FindBy(xpath = "//span[text()='Import']//..")
     private WebElement IMPORT_BUTTON;
 
 

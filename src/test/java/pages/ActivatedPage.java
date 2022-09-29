@@ -9,8 +9,8 @@ public class ActivatedPage extends BasePage{
     @FindBy (id = "resend")
     private WebElement RESEND_BUTTON;
 
-    @FindBy (xpath = "//h1[text()='Congratulations!']")
-    private WebElement CONGRATULATION;
+    @FindBy (xpath = "//a[@id='resend']")
+    private WebElement RECEIVED_BUTTON;
 
     public ActivatedPage(WebDriver driver) {
         super(driver);
@@ -21,7 +21,7 @@ public class ActivatedPage extends BasePage{
         return RESEND_BUTTON.isDisplayed();
     }
 
-    public boolean isCongratulationDisplayed () {
-        return CONGRATULATION.isDisplayed();
+    public boolean isReceivedButtonDisplayed() {
+        return RECEIVED_BUTTON.isDisplayed();
     }
 }

@@ -55,7 +55,7 @@ public class LogInTest extends BaseTest {
         LoginModel loginModel = PrepareLoginData.getLoginWithEmptyFieldsLogin();
         loginPage.openLoginPage()
                 .sendLoginForm(loginModel);
-        Assert.assertTrue(loginPage.isErrorMessageDisplayed());
+        Assert.assertEquals(loginPage.isErrorMessage(),"Заполните это поле.");
     }
 
 }

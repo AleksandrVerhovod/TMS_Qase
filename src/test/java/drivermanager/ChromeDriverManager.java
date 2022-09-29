@@ -10,7 +10,7 @@ public class ChromeDriverManager extends DriverManager {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-//        options.addArguments("--headless"); //фоновый режим
+        options.addArguments("--headless"); //фоновый режим
         driver = new ChromeDriver(options);
     }
 }

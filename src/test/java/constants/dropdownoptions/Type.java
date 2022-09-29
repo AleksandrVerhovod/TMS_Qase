@@ -8,6 +8,7 @@ public class Type {
 
     public static List<String> getType () {
         return Arrays.asList(
+                "Other",
                 "Functional",
                 "Smoke",
                 "Regression",
