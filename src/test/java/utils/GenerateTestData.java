@@ -32,7 +32,7 @@ public class GenerateTestData {
     }
 
     public static String getStatusTestCase() {
-        List<String> status = Status.getStatus();
+        List<String> status = StatusTestCase.getStatus();
         return status.get(getRandomIndex(status.size()));
     }
 
@@ -77,6 +77,21 @@ public class GenerateTestData {
     public static String getParent () {
         List<String> parent = ParentRequirements.getParent();
         return parent.get(getRandomIndex(parent.size()));
+    }
+
+    public static String getPlan () {
+        List<String> plan = PlanTestRun.getPlan();
+        return plan.get(getRandomIndex(plan.size()));
+    }
+
+    public static String getEnvironment () {
+        List<String> environment = EnvironmentTestRun.getEnvironment();
+        return environment.get(getRandomIndex(environment.size()));
+    }
+
+    public static String getDefaultAssignee () {
+        List<String> assignee = DefaultAssignee.getAssignee();
+        return assignee.get(getRandomIndex(assignee.size()));
     }
 
     public static String getStatusReq () {

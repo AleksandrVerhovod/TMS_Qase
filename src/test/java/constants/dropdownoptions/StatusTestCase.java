@@ -3,7 +3,7 @@ package constants.dropdownoptions;
 import java.util.Arrays;
 import java.util.List;
 
-public class Status {
+public class StatusTestCase {
 
     public static List<String> getStatus () {
         return Arrays.asList(

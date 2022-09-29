@@ -11,7 +11,7 @@ public class DropdownTestCase {
         this.labelText = labelText;
         this.driver = driver;
     }
-    //@class='required' and  - BUTTON
+
     private static final String BUTTON_XPATH = "//label[text()='%s']//..//button[@type='button']";
     private static final String SELECT_OPTION_XPATH = "//div[text()='%s']";
     private static final String BUTTON_MILESTONE_XPATH = "//div[contains(@class,'row')]//label[text()='Milestone']//..//span[@aria-live='polite']//..";

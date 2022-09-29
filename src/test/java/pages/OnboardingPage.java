@@ -1,7 +1,7 @@
 package pages;
 
 import elements.Email;
-import elements.Radiobutton;
+import elements.Checkbox;
 import constants.Urls;
 import models.OnboardingModel;
 import org.apache.log4j.LogManager;
@@ -48,11 +48,11 @@ public class OnboardingPage extends BasePage {
     public ProjectsListPage sendOnboardingValidData(OnboardingModel onboardingModel) {
         FULL_NAME_INPUT.sendKeys(onboardingModel.getFullName());
         JOB_TITLE_INPUT.sendKeys(onboardingModel.getTitleJob());
-        new Radiobutton(driver, "Role").selectRoleRadiobutton(onboardingModel.getRole());
+        new Checkbox(driver, "Role").selectRoleCheckbox(onboardingModel.getRole());
         BUTTON_SAVE.click();
         COMPANY_NAME.sendKeys(onboardingModel.getFullName());
-        new Radiobutton(driver, "CompanyDescribe").selectDescribesRadiobutton(onboardingModel.getCompanyDescribe());
-        new Radiobutton(driver, "CompanyIndustry").selectIndustryRadiobutton(onboardingModel.getCompanyIndustry());
+        new Checkbox(driver, "CompanyDescribe").selectDescribesCheckbox(onboardingModel.getCompanyDescribe());
+        new Checkbox(driver, "CompanyIndustry").selectIndustryCheckbox(onboardingModel.getCompanyIndustry());
         BUTTON_SAVE.click();
         new Email(driver).sendEmailField(onboardingModel.getWorkEmail());
         BUTTON_SAVE.click();
