@@ -9,11 +9,11 @@ import testdata.PrepareInviteNewUser;
 
 public class InvitesTest extends BaseTest{
 
-@Test
+@Test (description = "The user invite a new member")
     public void inviteNewValidMemberTest() {
-    LoginSite loginSite = new LoginSite(driver);
+    LoginSite loginSite = new LoginSite(getDriver());
     loginSite.demoLogin();
-    InvitesPage invitesPage = new InvitesPage(driver);
+    InvitesPage invitesPage = new InvitesPage(getDriver());
     InventNewUserModel inventNewUserModel = PrepareInviteNewUser.getInventNewUserModel();
     invitesPage.openInvitesPage()
             .clickInviteNewMember()

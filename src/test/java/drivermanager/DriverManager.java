@@ -6,25 +6,27 @@ import java.util.concurrent.TimeUnit;
 //абстрактный класс с абстрактным методом createDriver, который имплементируется у всех наследников,
 // опишем все общие методы, чтобы работать с драйвером (размер, таймауты)
 public abstract class  DriverManager {
-    protected WebDriver driver;
+    protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
+
     public abstract void createDriver();
+
     public WebDriver getDriver() {
-        return driver;
+        return threadLocalDriver.get();
     }
 
-    public void startMaximize () {
-        driver.manage().window().maximize();
+    public void startMaximize() {
+        threadLocalDriver.get().manage().window().maximize();
     }
 
-    public void setTimeout () {
-        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+    public void setTimeout() {
+        threadLocalDriver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     public void removeTimeout() {
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        threadLocalDriver.get().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     }
 
-    public void quitDriver () {
-        driver.quit();
+    public void quitDriver() {
+        getDriver().quit();
     }
 }

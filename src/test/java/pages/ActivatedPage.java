@@ -12,6 +12,9 @@ public class ActivatedPage extends BasePage{
     @FindBy (xpath = "//a[@id='resend']")
     private WebElement RECEIVED_BUTTON;
 
+    @FindBy (xpath = "//div[@class='error404 text-start']//span")
+    private WebElement EMAIL_IS_DISPLAYED;
+
     public ActivatedPage(WebDriver driver) {
         super(driver);
     }
@@ -21,7 +24,7 @@ public class ActivatedPage extends BasePage{
         return RESEND_BUTTON.isDisplayed();
     }
 
-    public boolean isReceivedButtonDisplayed() {
-        return RECEIVED_BUTTON.isDisplayed();
+    public String isEmailDisplayed() {
+        return EMAIL_IS_DISPLAYED.getText();
     }
 }

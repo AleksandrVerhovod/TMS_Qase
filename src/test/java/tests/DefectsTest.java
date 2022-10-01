@@ -9,11 +9,11 @@ import testdata.PrepareCreateDefectData;
 
 public class DefectsTest extends BaseTest {
 
-    @Test
+    @Test (priority = 1, description = "The user creates a new defect with valid values for the fields")
     public void createNewDefectTest() {
-        LoginSite loginSite = new LoginSite(driver);
+        LoginSite loginSite = new LoginSite(getDriver());
         loginSite.demoLogin();
-        DefectsPage defectsPage = new DefectsPage(driver);
+        DefectsPage defectsPage = new DefectsPage(getDriver());
         CreateDefectModel createDefectModel = PrepareCreateDefectData.getValidDefectData();
         defectsPage.openDefectsPage()
                 .clickCreateNewDefectButton()
@@ -23,11 +23,11 @@ public class DefectsTest extends BaseTest {
 
     }
 
-    @Test
+    @Test (priority = 2, description = "The user creates a new defect and then delete it")
     public void deleteDefectTest() {
-        LoginSite loginSite = new LoginSite(driver);
+        LoginSite loginSite = new LoginSite(getDriver());
         loginSite.demoLogin();
-        DefectsPage defectsPage = new DefectsPage(driver);
+        DefectsPage defectsPage = new DefectsPage(getDriver());
         CreateDefectModel createDefectModel = PrepareCreateDefectData.getValidDefectData();
         defectsPage.openDefectsPage()
                 .clickCreateNewDefectButton()

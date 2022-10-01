@@ -111,7 +111,7 @@ public class GenerateTestData {
 
     public static String generateEmail() {
         faker = new Faker();
-        return faker.internet().emailAddress();
+        return faker.letterify("???????????@gmail.com");
     }
 
     public static String generatePassword() {

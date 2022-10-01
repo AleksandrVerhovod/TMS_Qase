@@ -1,24 +1,24 @@
 package drivermanager;
 //инициализация драйвера в зависимости от того,, кокой из типов перечислений применяется в тесте
 public class DriverFactory {
-    public DriverManager getManager(DriverType type) {
+    public DriverManager getManager(DriverType driverType) {
 
-        DriverManager driverManager;
 
-        switch (type) {
+        DriverManager driverThreadLocalManager;
+
+        switch (driverType) {
             case CHROME:
-                driverManager = new ChromeDriverManager();
+                driverThreadLocalManager = new ChromeDriverManager();
                 break;
             case FIREFOX:
-                driverManager = new FirefoxDriverManager();
+                driverThreadLocalManager = new FirefoxDriverManager();
                 break;
             case REMOTE:
-
-                driverManager = new RemoteDriverManager();
+                driverThreadLocalManager = new RemoteDriverManager();
                 break;
             default:
-                throw new IllegalStateException("Unexpected driver type: " + type);
+                throw new IllegalStateException("Unexpected driver type " + driverType);
         }
-        return driverManager;
+        return driverThreadLocalManager;
     }
 }

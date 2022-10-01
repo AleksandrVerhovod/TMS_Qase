@@ -9,11 +9,11 @@ import testdata.PrepareTestRuns;
 
 public class TestRunsTest extends BaseTest {
 
-    @Test
+    @Test (description = "The user creates a new test run with valid values for the fields")
     public void createTestRunValidDateTest() {
-        LoginSite loginSite = new LoginSite(driver);
+        LoginSite loginSite = new LoginSite(getDriver());
         loginSite.demoLogin();
-        TestRunsPage testRunsPage = new TestRunsPage(driver);
+        TestRunsPage testRunsPage = new TestRunsPage(getDriver());
         TestRunsModel testRunsModel = PrepareTestRuns.getTestRunModelValidData();
         testRunsPage.openTestRunsPage()
                 .clickStartNewTestRun()

@@ -11,17 +11,17 @@ import testdata.PrepareCreateProjectData;
 
 public class CreateProjectTest extends BaseTest {
 
-    @Test
+    @Test (description = "The user creates a new project with valid values for the fields")
     public void createNewProjectTest() {
-        LoginSite loginSite = new LoginSite(driver);
+        LoginSite loginSite = new LoginSite(getDriver());
         loginSite.demoLogin();
-        ProjectsListPage projectsListPage = new ProjectsListPage(driver);
+        ProjectsListPage projectsListPage = new ProjectsListPage(getDriver());
         projectsListPage.addNewProject();
-        CreateProjectPage createProjectPage = new CreateProjectPage(driver);
+        CreateProjectPage createProjectPage = new CreateProjectPage(getDriver());
         CreateProjectModel createProjectModel = PrepareCreateProjectData.getCreateProjectWithValidData();
         createProjectPage.sendCreateRandomProjectForm(createProjectModel)
                 .clickCreateProjectButton();
-        ProjectRepositoryPage projectRepositoryPage = new ProjectRepositoryPage(driver);
+        ProjectRepositoryPage projectRepositoryPage = new ProjectRepositoryPage(getDriver());
         Assert.assertTrue(projectRepositoryPage.isImportButtonDisplayed(), "'Import' button don't displayed ");
     }
 
