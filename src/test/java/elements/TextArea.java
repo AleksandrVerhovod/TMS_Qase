@@ -8,7 +8,7 @@ import testdata.PrepareRegistrationData;
 
 public class TextArea {
     private static final Logger LOGGER = LogManager.getLogger(PrepareRegistrationData.class.getName());
-    private static final String TEXT_AREA_XPATH = "//div[@id='application-content']//label[text()='%s']//..//p";
+    private static final String TEXT_AREA_XPATH = "//div[@id='application-content']//label[text()='%s']//..//input";
     private String labelText;
     private WebDriver driver;
 

@@ -20,7 +20,7 @@ public class CreateRequirementsPage extends BasePage {
     @FindBy(id = "title")
     private WebElement TITLE_REQUIREMENT_INPUT;
 
-    @FindBy(xpath = "//div[@id='descriptionGroup']//label[text()='Description']//..//p")
+    @FindBy(xpath = "//div[@id='descriptionGroup']//label[text()='Description']//..//input")
     private WebElement DESCRIPTION_INPUT;
 
     @FindBy(xpath = "//button[@id='save-case']")

@@ -26,6 +26,7 @@ public class TestListeners implements ITestListener {
         WebDriver driver = ((BaseTest) currentClass).getDriver();
         AllureService allureService = new AllureService();
         allureService.takeScreenshot(driver);
+        allureService.getSystemName();
     }
 
     @Override
