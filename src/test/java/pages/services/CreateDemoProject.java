@@ -1,5 +1,6 @@
 package pages.services;
 
+import io.qameta.allure.Step;
 import models.InventNewUserModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -17,6 +18,7 @@ public class CreateDemoProject {
         this.driver = driver;
     }
     private static final Logger LOGGER = LogManager.getLogger(CreateDemoProject.class.getName());
+    @Step ("Create random name Project")
     public void createProject() {
         ProjectsListPage projectsListPage = new ProjectsListPage(driver);
         LOGGER.debug(String.format("Page %s initialized", ProjectsListPage.class.getName()));

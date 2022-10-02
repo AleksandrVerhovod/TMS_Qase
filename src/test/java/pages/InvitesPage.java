@@ -3,6 +3,7 @@ package pages;
 import constants.Credentials;
 import constants.Urls;
 import elements.Dropdowns;
+import io.qameta.allure.Step;
 import models.InventNewUserModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -46,24 +47,24 @@ public class InvitesPage extends BasePage {
         return FILTER_BLOCK.isDisplayed();
     }
 
-
+    @Step("Open invites page")
     public InvitesPage openInvitesPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.INVITES_PAGE)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.INVITES_PAGE));
         return this;
     }
-
+    @Step("Click 'Invite new member' button")
     public InvitesPage clickInviteNewMember() {
         LOGGER.debug(String.format("Attempt to click button: %s", INVITE_NEW_MEMBER_BUTTON));
         INVITE_NEW_MEMBER_BUTTON.click();
         return this;
     }
-
+    @Step("Confirmation message about added invited user is displayed")
     public boolean isConfirmationMessageInvitedDisplayed () {
         LOGGER.debug(String.format("Attempt to find message: %s", CONFIRMATION_MESSAGE));
         return CONFIRMATION_MESSAGE.isDisplayed();
     }
-
+    @Step("Fill invent new user form")
     public InvitesPage sendInviteNewUserForm (InventNewUserModel inventNewUserModel) {
         EMAIL_INPUT.sendKeys(GenerateTestData.generateEmail());
         LOGGER.debug(String.format("Input email: %s", GenerateTestData.generateEmail()));

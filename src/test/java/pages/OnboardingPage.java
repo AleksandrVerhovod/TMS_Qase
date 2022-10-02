@@ -3,6 +3,7 @@ package pages;
 import elements.Email;
 import elements.Checkbox;
 import constants.Urls;
+import io.qameta.allure.Step;
 import models.OnboardingModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -38,13 +39,13 @@ public class OnboardingPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find number: %s", NUMBER_ABOUT_YOU));
         return NUMBER_ABOUT_YOU.isDisplayed();
     }
-
+    @Step("Open onboarding page")
     public OnboardingPage openOnboardingPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.ONBOARDING_PAGE)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.ONBOARDING_PAGE));
         return this;
     }
-
+    @Step("Fill onboarding form by valid random data")
     public ProjectsListPage sendOnboardingValidData(OnboardingModel onboardingModel) {
         FULL_NAME_INPUT.sendKeys(onboardingModel.getFullName());
         LOGGER.debug(String.format("Input email: %s", onboardingModel.getFullName()));

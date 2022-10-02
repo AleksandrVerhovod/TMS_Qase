@@ -29,7 +29,7 @@ public class CreateTestCaseTest extends BaseTest {
                 CreateTestCasePage createTestCasePage = new CreateTestCasePage(getDriver());
         CreateTestCaseModel createTestCaseModel = PrepareCreateTestCase.getCreateTestCaseValidData();
         LOGGER.info(String.format("Prepared valid data by %s", PrepareCreateTestCase.class.getName()));
-        createTestCasePage.fillInAccountForm(createTestCaseModel);
+        createTestCasePage.fillInCreateTestCaseForm(createTestCaseModel);
         LOGGER.info("Check if confirmation message is displayed");
         Assert.assertTrue(createTestCasePage.isConfirmationMessageCreatTestCaseDisplayed(), "No confirmation message created test case");
 

@@ -1,5 +1,6 @@
 package pages.services;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public class LoginSite {
     public LoginSite(WebDriver driver) {
         this.driver = driver;
     }
-
+    @Step("Login by no confirm user")
     public void loginForConfirm() {
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.debug(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -22,7 +23,7 @@ public class LoginSite {
         LOGGER.debug("Input Login and Password for registration");
         loginPage.sendNoConfirmUserForm();
     }
-
+    @Step("Login by demo user")
     public void demoLogin() {
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.debug(String.format("Page %s initialized", LoginPage.class.getName()));

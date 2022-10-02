@@ -2,6 +2,7 @@ package pages;
 
 import constants.Urls;
 import elements.Dropdowns;
+import io.qameta.allure.Step;
 import models.CreateDefectModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -50,19 +51,19 @@ public class DefectsPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", CREATE_NEW_DEFECT_BUTTON));
         return CREATE_NEW_DEFECT_BUTTON.isDisplayed();
     }
-
+    @Step("Open defect page")
     public DefectsPage openDefectsPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.DEFECTS_PAGE)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.DEFECTS_PAGE));
         return this;
     }
-
+    @Step("Click 'Create new defect' button")
     public DefectsPage clickCreateNewDefectButton() {
         LOGGER.debug(String.format("Attempt to click button: %s", CREATE_NEW_DEFECT_BUTTON));
         CREATE_NEW_DEFECT_BUTTON.click();
         return this;
     }
-
+    @Step("Fill defect form")
     public DefectsPage sendCreateDefectForm(CreateDefectModel createDefectModel) {
         DEFECT_TITLE_INPUT.sendKeys(createDefectModel.getDefectTitle());
         LOGGER.debug(String.format("Input defect title: %s", createDefectModel.getDefectTitle()));
@@ -75,24 +76,24 @@ public class DefectsPage extends BasePage {
         return this;
     }
 
-
+    @Step("Click 'Create defect' button")
     public DefectsPage clickCreateDefectButton() {
         LOGGER.debug(String.format("Attempt to click button: %s", CREATE_DEFECT_BUTTON));
         CREATE_DEFECT_BUTTON.click();
         return this;
     }
-
+    @Step("Check if success message about create defect is displayed")
     public boolean isSuccessCreateMessageDisplayed() {
         LOGGER.debug(String.format("Attempt to find message: %s", SUCCESS_MESSAGE));
         return SUCCESS_MESSAGE.isDisplayed();
     }
 
-
+    @Step("Check if success message about delete defect is displayed")
     public boolean isSuccessDeleteMessageDisplayed () {
         LOGGER.debug(String.format("Attempt to find message: %s", SUCCESS_DELETE_MESSAGE));
         return SUCCESS_DELETE_MESSAGE.isDisplayed();
     }
-
+    @Step("Delete defect")
     public void deleteDefect (String option) {
         String listFinalXpath = String.format(DEFECT_DROPDOWN_MENU,option);
         driver.findElement(By.xpath(listFinalXpath)).click();

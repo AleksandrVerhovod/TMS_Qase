@@ -1,8 +1,8 @@
 package pages;
 
-import constants.Urls;
 import elements.DropdownTestCase;
 import elements.TextArea;
+import io.qameta.allure.Step;
 import models.CreateTestCaseModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -49,13 +49,13 @@ public class CreateTestCasePage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", SAVE_BUTTON));
         return SAVE_BUTTON.isDisplayed();
     }
-
+    @Step("Check if confirmation message about created test case is displayed")
     public boolean isConfirmationMessageCreatTestCaseDisplayed() {
         LOGGER.debug(String.format("Attempt to find message: %s", CONFIRMATION_MESSAGE_CREATE_TC));
         return CONFIRMATION_MESSAGE_CREATE_TC.isDisplayed();
     }
-
-    public void fillInAccountForm(CreateTestCaseModel newTestCase) {
+    @Step("Fill test case form")
+    public void fillInCreateTestCaseForm(CreateTestCaseModel newTestCase) {
         TITLE_TEST_CASE.sendKeys(newTestCase.getTitle());
         LOGGER.debug(String.format("Input title: %s", newTestCase.getTitle()));
         new DropdownTestCase(driver, "Status").selectOptionsInTestCase(newTestCase.getStatus());
