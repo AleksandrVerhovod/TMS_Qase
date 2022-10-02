@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+
     @FindBy(id = "inputEmail")
     private WebElement EMAIL_INPUT;
 
@@ -32,74 +33,78 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[@class='form-control-feedback']")
     private WebElement ERROR_MESSAGE;
 
-    @FindBy(xpath = "")
-    private WebElement POPUP_MESSAGE;
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public boolean isPageOpened() {
-        LOGGER.debug(String.format("Find Submit button on the Login Page: %s", LOGIN_BUTTON));
+        LOGGER.debug(String.format("Attempt to find button: %s", LOGIN_BUTTON));
         return LOGIN_BUTTON.isDisplayed();
     }
 
     public LoginPage openLoginPage() {
-        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
+        LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE));
         driver.get(Urls.QASE_LOGIN_PAGE);
         return this;
     }
+
     public ProjectsListPage sendNoConfirmUserForm() {
-//        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         EMAIL_INPUT.sendKeys(Credentials.EMAIL_NO_CONFIRM);
+        LOGGER.debug(String.format("Input email: %s", Credentials.EMAIL_NO_CONFIRM));
         PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_NO_CONFIRM);
+        LOGGER.debug(String.format("Input password: %s", Credentials.PASSWORD_NO_CONFIRM));
+        LOGGER.debug(String.format("Attempt to click button: %s", LOGIN_BUTTON));
         LOGIN_BUTTON.click();
         return new ProjectsListPage(driver);
     }
 
     public ProjectsListPage sendAcceptedUserForm() {
-//        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         EMAIL_INPUT.sendKeys(Credentials.EMAIL_VALID);
+        LOGGER.debug(String.format("Input email: %s", Credentials.EMAIL_VALID));
         PASSWORD_INPUT.sendKeys(Credentials.PASSWORD_VALID);
+        LOGGER.debug(String.format("Input password: %s", Credentials.PASSWORD_VALID));
+        LOGGER.debug(String.format("Attempt to click button: %s", LOGIN_BUTTON));
         LOGIN_BUTTON.click();
         return new ProjectsListPage(driver);
     }
 
     public ProjectsListPage sendLoginForm(LoginModel loginModel) {
-//        LOGGER.debug(String.format("Attempt to open URL: %s",Urls.QASE_LOGIN_PAGE));
         EMAIL_INPUT.sendKeys(loginModel.getEmail());
+        LOGGER.debug(String.format("Input email: %s", loginModel.getEmail()));
         PASSWORD_INPUT.sendKeys(loginModel.getPassword());
+        LOGGER.debug(String.format("Input password: %s", loginModel.getPassword()));
+        LOGGER.debug(String.format("Attempt to click button: %s", LOGIN_BUTTON));
         LOGIN_BUTTON.click();
         return new ProjectsListPage(driver);
     }
 
 
-      public LoginPage clickCheckboxButton() {
-        LOGGER.debug("Enable checkbox 'Remember Me'");
+    public LoginPage clickCheckboxButton() {
+        LOGGER.debug(String.format("Attempt to click checkbox: %s", CHECKBOX_REMEMBER_ME));
         CHECKBOX_REMEMBER_ME.click();
         return this;
     }
 
-        public LoginPage signUpButtonClick() {
-            LOGGER.debug("SignUp button click");
-            SIGN_UP_BUTTON.click();
-            return this;
-        }
+    public LoginPage signUpButtonClick() {
+        LOGGER.debug(String.format("Attempt to button: %s", SIGN_UP_BUTTON));
+        SIGN_UP_BUTTON.click();
+        return this;
+    }
 
     public LoginPage forgotYourPasswordButtonClick() {
-        LOGGER.debug("ForgotYourPassword button click");
+        LOGGER.debug(String.format("Attempt to button: %s", FORGOT_YOUR_PASSWORD_BUTTON));
         FORGOT_YOUR_PASSWORD_BUTTON.click();
         return this;
     }
 
     public boolean isErrorMessageDisplayed() {
-        LOGGER.debug("Error message is displayed");
+        LOGGER.debug(String.format("Attempt to find message: %s", ERROR_MESSAGE));
         return ERROR_MESSAGE.isDisplayed();
     }
 
     public String isErrorMessage() {
-        LOGGER.debug("Error message is displayed");
+        LOGGER.debug(String.format("Attempt to get attribute of: %s", EMAIL_INPUT));
         return EMAIL_INPUT.getAttribute("validationMessage");
     }
 

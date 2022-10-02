@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 public class RegistrationPage extends BasePage {
-    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(RegistrationPage.class.getName());
 
 
     @FindBy(id = "inputEmail")
@@ -41,7 +41,7 @@ public class RegistrationPage extends BasePage {
 
     @Override
     public boolean isPageOpened() {
-        LOGGER.debug(String.format("Find Submit button on the Registration Page: %s", CREATE_BUTTON));
+        LOGGER.debug(String.format("Attempt to find button: %s", CREATE_BUTTON));
         return CREATE_BUTTON.isDisplayed();
     }
 
@@ -52,39 +52,43 @@ public class RegistrationPage extends BasePage {
     }
 
     public RegistrationPage clickCheckboxAgreePrivacyPolicy() {
-        LOGGER.debug(String.format("Checkbox 'Agree privacy policy' enable"));
+        LOGGER.debug(String.format("Attempt to select checkbox: %s", CHECKBOX_AGREE_PRIVACY));
         CHECKBOX_AGREE_PRIVACY.click();
         return this;
     }
 
     public RegistrationPage clickCheckboxNewsletter() {
-        LOGGER.debug(String.format("Checkbox 'Newsletter' enable"));
+        LOGGER.debug(String.format("Attempt to select checkbox 'Newsletter' by %s", CHECKBOX_NEWSLETTERS));
         CHECKBOX_NEWSLETTERS.click();
         return this;
     }
 
     public ActivatedPage sendRegistrationForm(RegistrationModel registrationModel) {
         EMAIL_INPUT.sendKeys(registrationModel.getEmail());
+        LOGGER.debug(String.format("Input email: %s", registrationModel.getEmail()));
         PASSWORD_INPUT.sendKeys(registrationModel.getPassword());
+        LOGGER.debug(String.format("Input password: %s", registrationModel.getPassword()));
         CONFIRM_PASSWORD_INPUT.sendKeys(registrationModel.getConfirmPassword());
+        LOGGER.debug(String.format("Input confirm password: %s", registrationModel.getConfirmPassword()));
         CREATE_BUTTON.click();
+        LOGGER.debug(String.format("Attempt to click create button: %s", CREATE_BUTTON));
         return new ActivatedPage(driver);
     }
 
     public String errorMessageEmailInput() {
-        LOGGER.debug(String.format("Alert message 'Заполниет это поле' is displayed"));
         String attribute = EMAIL_INPUT.getAttribute("validationMessage");
+        LOGGER.debug(String.format("Attempt to find message: %s", attribute));
         return attribute;
     }
 
     public String errorMessageConfirmPassInput() {
-        LOGGER.debug(String.format("Alert message 'Заполниет это поле' is displayed"));
         String attribute = CONFIRM_PASSWORD_INPUT.getAttribute("validationMessage");
+        LOGGER.debug(String.format("Attempt to find message: %s", attribute));
         return attribute;
     }
 
     public boolean isMessageNotMatchConfirmPassDisplayed() {
-        LOGGER.debug(String.format("Message is displayed on the Registration Page: %s", NOT_MATCH_CONFIRMATION_MESSAGE));
+        LOGGER.debug(String.format("Attempt to find message: %s", NOT_MATCH_CONFIRMATION_MESSAGE));
         return NOT_MATCH_CONFIRMATION_MESSAGE.isDisplayed();
     }
 

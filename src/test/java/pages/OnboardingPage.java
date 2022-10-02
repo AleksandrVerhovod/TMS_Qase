@@ -11,8 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class OnboardingPage extends BasePage {
+    private static final Logger LOGGER = LogManager.getLogger(OnboardingPage.class.getName());
 
-    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
     @FindBy(xpath = "//div[@class='onboarding-left-column']//span[text()='1']")
     private WebElement NUMBER_ABOUT_YOU;
 
@@ -35,7 +35,7 @@ public class OnboardingPage extends BasePage {
 
     @Override
     public boolean isPageOpened() {
-        LOGGER.debug(String.format("Find Submit button on the Registration Page: %s", NUMBER_ABOUT_YOU));
+        LOGGER.debug(String.format("Attempt to find number: %s", NUMBER_ABOUT_YOU));
         return NUMBER_ABOUT_YOU.isDisplayed();
     }
 
@@ -47,14 +47,24 @@ public class OnboardingPage extends BasePage {
 
     public ProjectsListPage sendOnboardingValidData(OnboardingModel onboardingModel) {
         FULL_NAME_INPUT.sendKeys(onboardingModel.getFullName());
+        LOGGER.debug(String.format("Input email: %s", onboardingModel.getFullName()));
         JOB_TITLE_INPUT.sendKeys(onboardingModel.getTitleJob());
+        LOGGER.debug(String.format("Input Title job: %s", onboardingModel.getTitleJob()));
         new Checkbox(driver, "Role").selectRoleCheckbox(onboardingModel.getRole());
+        LOGGER.debug(String.format("Select checkbox Role: %s", onboardingModel.getRole()));
+        LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_SAVE));
         BUTTON_SAVE.click();
         COMPANY_NAME.sendKeys(onboardingModel.getFullName());
+        LOGGER.debug(String.format("Input Company Name: %s", onboardingModel.getFullName()));
         new Checkbox(driver, "CompanyDescribe").selectDescribesCheckbox(onboardingModel.getCompanyDescribe());
+        LOGGER.debug(String.format("Select checkbox Company Describe: %s", onboardingModel.getCompanyDescribe()));
         new Checkbox(driver, "CompanyIndustry").selectIndustryCheckbox(onboardingModel.getCompanyIndustry());
+        LOGGER.debug(String.format("Select checkbox CompanyIndustry: %s", onboardingModel.getCompanyIndustry()));
+        LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_SAVE));
         BUTTON_SAVE.click();
         new Email(driver).sendEmailField(onboardingModel.getWorkEmail());
+        LOGGER.debug(String.format("Input Work Email: %s", onboardingModel.getWorkEmail()));
+        LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_SAVE));
         BUTTON_SAVE.click();
         return new ProjectsListPage(driver);
 

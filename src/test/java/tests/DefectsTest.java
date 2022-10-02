@@ -1,24 +1,36 @@
 package tests;
 
 import models.CreateDefectModel;
+import models.InventNewUserModel;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DefectsPage;
+import pages.InvitesPage;
 import pages.services.LoginSite;
 import testdata.PrepareCreateDefectData;
+import testdata.PrepareRegistrationData;
 
 public class DefectsTest extends BaseTest {
+    private static final Logger LOGGER = LogManager.getLogger(DefectsTest.class.getName());
 
     @Test (priority = 1, description = "The user creates a new defect with valid values for the fields")
     public void createNewDefectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
+        LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));
         loginSite.demoLogin();
+        LOGGER.info("Demo Login done");
         DefectsPage defectsPage = new DefectsPage(getDriver());
+        LOGGER.info(String.format("Page %s initialized", DefectsPage.class.getName()));
         CreateDefectModel createDefectModel = PrepareCreateDefectData.getValidDefectData();
+        LOGGER.info(String.format("Prepared valid data by %s", PrepareCreateDefectData.class.getName()));
+        LOGGER.info("Input information into fields");
         defectsPage.openDefectsPage()
                 .clickCreateNewDefectButton()
                 .sendCreateDefectForm(createDefectModel)
                 .clickCreateDefectButton();
+        LOGGER.info("Check if success message is displayed");
         Assert.assertTrue(defectsPage.isSuccessCreateMessageDisplayed(), "No success message");
 
     }

@@ -2,11 +2,15 @@ package testdata;
 
 import models.CreateProjectModel;
 import models.CreateTestCaseModel;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import utils.GenerateTestData;
 
 public class PrepareCreateTestCase {
+    private static final Logger LOGGER = LogManager.getLogger(PrepareCreateTestCase.class.getName());
 
     public static CreateTestCaseModel getCreateTestCaseValidData() {
+        LOGGER.info("Generate test case valid data");
         return CreateTestCaseModel
                 .builder()
                 .title(GenerateTestData.generateTitle())
