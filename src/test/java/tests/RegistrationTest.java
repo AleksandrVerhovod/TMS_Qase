@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.RegistrationModel;
 import models.TestRunsModel;
 import org.apache.log4j.LogManager;
@@ -31,7 +32,8 @@ public class RegistrationTest extends BaseTest {
         Assert.assertEquals(activatedPage.isEmailDisplayed(),registrationModel.getEmail());
     }
 
-    @Test (priority = 2, description = "The user registers with fields filled in with valid data except email")
+    @Test (priority = 2)
+    @Description("The user registers with fields filled in with valid data except email")
     public void registrationWithoutEmailTest () {
         RegistrationPage registrationPage = new RegistrationPage(getDriver());
         LOGGER.info(String.format("Open %s page",RegistrationPage.class.getName()));
@@ -43,7 +45,8 @@ public class RegistrationTest extends BaseTest {
         LOGGER.info("Check if error message is displayed");
         Assert.assertEquals(registrationPage.errorMessageEmailInput(),"Заполните это поле.");
     }
-    @Test (priority = 2, description = "The user registers with fields filled in with valid data except confirm password")
+    @Test (priority = 2)
+    @Description ("The user registers with fields filled in with valid data except confirm password")
     public void registrationWithoutConfirmPasswordTest () {
         RegistrationPage registrationPage = new RegistrationPage(getDriver());
         LOGGER.info(String.format("Open %s page",RegistrationPage.class.getName()));
@@ -56,7 +59,8 @@ public class RegistrationTest extends BaseTest {
         Assert.assertEquals(registrationPage.errorMessageConfirmPassInput(),"Заполните это поле.");
     }
 
-    @Test (priority = 2, description = "The user registers with fields filled with valid data, but with mismatched values into password and confirm password")
+    @Test (priority = 2)
+    @Description("The user registers with fields filled with valid data, but with mismatched values into password and confirm password")
     public void registrationWithNoEqualsPasswordAndConfirmPasswordTest () {
         RegistrationPage registrationPage = new RegistrationPage(getDriver());
         LOGGER.info(String.format("Open %s page",RegistrationPage.class.getName()));

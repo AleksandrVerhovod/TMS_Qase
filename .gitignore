@@ -156,3 +156,4 @@ buildNumber.properties
 /src/test/allure-results/
 /src/main/java/constants/Credentials.java
 /allure-results/
+/logs/

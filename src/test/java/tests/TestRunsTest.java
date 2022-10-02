@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.TestRunsModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -8,12 +9,12 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.TestRunsPage;
 import pages.services.LoginSite;
-import testdata.PrepareRegistrationData;
 import testdata.PrepareTestRuns;
 
 public class TestRunsTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(TestRunsTest.class.getName());
-    @Test (description = "The user creates a new test run with valid values for the fields")
+    @Test
+    @Description("The user creates a new test run with valid values for the fields")
     public void createTestRunValidDateTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));

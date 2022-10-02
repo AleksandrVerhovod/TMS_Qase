@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Test">
-    <parameter name="browserType" value="chrome"/>
-    <test name="Registration" thread-count="4" parallel="methods">
+    <parameter name="browserType" value="firefox"/>
+    <test name="Registration" thread-count="2" parallel="methods">
         <classes>
             <class name="tests.RegistrationTest"/>
             <!--            <class name="tests.OnboardingTest"/>-->

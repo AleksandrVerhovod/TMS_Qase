@@ -1,16 +1,12 @@
 package utils;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import tests.BaseTest;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class TestListeners implements ITestListener {
     @Override
@@ -24,19 +20,12 @@ public class TestListeners implements ITestListener {
     }
 
     @Override
+    @Attachment ()
     public void onTestFailure(ITestResult iTestResult) {
         Object currentClass = iTestResult.getInstance();
         WebDriver driver = ((BaseTest) currentClass).getDriver();
-        TakesScreenshot screenShot = ((TakesScreenshot) driver);
-        byte[] sourceFile = screenShot.getScreenshotAs(OutputType.BYTES);
-        try {
-            String path = "src/test/resources/screenshots/%s.png";
-            String data = String.valueOf(java.time.LocalDateTime.now());
-            String finalpath = String.format(path,data);
-            Files.write(Paths.get(finalpath), sourceFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        AllureService allureService = new AllureService();
+        allureService.takeScreenshot(driver);
     }
 
     @Override

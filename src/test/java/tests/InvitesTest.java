@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.InventNewUserModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -14,7 +15,8 @@ import testdata.PrepareRegistrationData;
 
 public class InvitesTest extends BaseTest{
     private static final Logger LOGGER = LogManager.getLogger(InvitesTest.class.getName());
-@Test (description = "The user invite a new member")
+@Test
+@Description("The user invite a new member")
     public void inviteNewValidMemberTest() {
 
     LoginSite loginSite = new LoginSite(getDriver());

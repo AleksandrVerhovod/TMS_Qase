@@ -15,7 +15,7 @@ public class FirefoxDriverManager extends DriverManager {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--disable-notifications");
-//        options.addArguments("--headless"); //фоновый режим
+        options.addArguments("--headless"); //фоновый режим
         threadLocalDriver.set(new FirefoxDriver(options));
     }
         

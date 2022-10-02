@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.LoginModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -14,7 +15,8 @@ import testdata.PrepareRegistrationData;
 
 public class LogInTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(LogInTest.class.getName());
-    @Test(priority = 1, description = "The user login with valid data and select checkbox 'Remember me'")
+    @Test(priority = 1)
+    @Description("The user login with valid data and select checkbox 'Remember me'")
     public void loginValidUserWithCheckboxTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -29,7 +31,8 @@ public class LogInTest extends BaseTest {
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
 
-    @Test(priority = 2, description = "The user login with valid data without click checkbox 'Remember me'")
+    @Test(priority = 2)
+    @Description("The user login with valid data without click checkbox 'Remember me'")
     public void loginValidUserWithoutCheckboxTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -44,7 +47,8 @@ public class LogInTest extends BaseTest {
     }
 
 
-    @Test(priority = 1, description = "The user login with valid password and unregistered email")
+    @Test(priority = 1)
+    @Description("The user login with valid password and unregistered email")
     public void loginInvalidEmailTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -56,7 +60,8 @@ public class LogInTest extends BaseTest {
         Assert.assertTrue(loginPage.isErrorMessageDisplayed());
     }
 
-    @Test(priority = 1, description = "The user login with invalid password and valid email")
+    @Test(priority = 1)
+    @Description("The user login with invalid password and valid email")
     public void loginInvalidPasswordTest() {
         LoginPage loginPage = new LoginPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -68,7 +73,8 @@ public class LogInTest extends BaseTest {
         Assert.assertTrue(loginPage.isErrorMessageDisplayed());
     }
 
-    @Test(invocationCount = 1, threadPoolSize = 1, priority = 2, description = "The user login with empty password and email fields")
+    @Test(invocationCount = 1, threadPoolSize = 1, priority = 2)
+    @Description("The user login with empty password and email fields")
     public void loginWithEmptyFields() {
         LoginPage loginPage = new LoginPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));

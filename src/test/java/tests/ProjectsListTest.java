@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -15,7 +16,8 @@ import testdata.PrepareRegistrationData;
 public class ProjectsListTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(ProjectsListTest.class.getName());
 
-    @Test (priority = 1, description = "The user creates a new project with valid values for the fields")
+    @Test (priority = 1)
+    @Description("The user creates a new project with valid values for the fields")
     public void createProjectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -32,7 +34,8 @@ public class ProjectsListTest extends BaseTest {
         Assert.assertTrue(projectRepositoryPage.isImportButtonDisplayed(),"Demo project has not been created");
     }
 
-    @Test (priority = 2, description = "The user creates a new project and then delete it")
+    @Test (priority = 2)
+    @Description("The user creates a new project and then delete it")
     public void deleteProjectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
@@ -53,7 +56,8 @@ public class ProjectsListTest extends BaseTest {
         Assert.assertFalse(projectsListPage.isProjectNameDisplayed(), "Demo project has not been deleted");
     }
 
-    @Test (priority = 3, description = "The user select favorite project from the list")
+    @Test (priority = 3)
+    @Description("The user select favorite project from the list")
     public void selectFavoriteProjectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));

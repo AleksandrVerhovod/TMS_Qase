@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.CreateProjectModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -16,7 +17,8 @@ import testdata.PrepareRegistrationData;
 
 public class CreateProjectTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(CreateProjectTest.class.getName());
-    @Test (description = "The user creates a new project with valid values for the fields")
+    @Test
+    @Description("The user creates a new project with valid values for the fields")
     public void createNewProjectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));

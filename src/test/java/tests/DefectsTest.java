@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.CreateDefectModel;
 import models.InventNewUserModel;
 import org.apache.log4j.LogManager;
@@ -15,7 +16,8 @@ import testdata.PrepareRegistrationData;
 public class DefectsTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(DefectsTest.class.getName());
 
-    @Test (priority = 1, description = "The user creates a new defect with valid values for the fields")
+    @Test (priority = 1)
+    @Description ("The user creates a new defect with valid values for the fields")
     public void createNewDefectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));
@@ -35,7 +37,8 @@ public class DefectsTest extends BaseTest {
 
     }
 
-    @Test (priority = 2, description = "The user creates a new defect and then delete it")
+    @Test (priority = 2)
+    @Description("The user creates a new defect and then delete it")
     public void deleteDefectTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         loginSite.demoLogin();

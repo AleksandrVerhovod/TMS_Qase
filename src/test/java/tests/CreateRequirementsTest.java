@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.CreateRequirementsModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -13,7 +14,8 @@ import testdata.PrepareRegistrationData;
 
 public class CreateRequirementsTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(CreateRequirementsTest.class.getName());
-    @Test (description = "The user creates a new requirement with valid values for the fields")
+    @Test
+    @Description("The user creates a new requirement with valid values for the fields")
     public void createRequirementsValidDataTest () {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));

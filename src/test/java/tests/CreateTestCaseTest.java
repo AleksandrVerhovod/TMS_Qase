@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.CreateTestCaseModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -13,7 +14,8 @@ import utils.RetryAnalyzer;
 
 public class CreateTestCaseTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(CreateTestCaseTest.class.getName());
-    @Test (retryAnalyzer = RetryAnalyzer.class, description = "The user creates a new test case with valid values for the fields")
+    @Test (retryAnalyzer = RetryAnalyzer.class)
+    @Description("The user creates a new test case with valid values for the fields")
     public void createTestCaseValidDateTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));

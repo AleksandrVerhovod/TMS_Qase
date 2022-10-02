@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Description;
 import models.OnboardingModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -14,7 +15,8 @@ import testdata.PrepareRegistrationData;
 
 public class OnboardingTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(OnboardingTest.class.getName());
-    @Test (description = "User to complete the registration, the user enters the correct data in the fields")
+    @Test
+    @Description("User to complete the registration, the user enters the correct data in the fields")
     public void inputValidAboutYouOnboardingDataTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));
