@@ -12,16 +12,16 @@ import org.openqa.selenium.support.FindBy;
 public class CreateProjectPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(CreateProjectPage.class.getName());
 
-    @FindBy(xpath = "//button[text()='Create project']")
+    @FindBy(xpath = "//span[text()='Create project']//..")
     private WebElement CREATE_PROJECT_BUTTON;
 
-    @FindBy(xpath = "//input[@id='inputTitle']")
+    @FindBy(xpath = "//input[@id='project-name']")
     private WebElement INPUT_PROJECT_NAME;
 
-    @FindBy(xpath = "//input[@id='inputCode']")
+    @FindBy(xpath = "//input[@id='project-code']")
     private WebElement INPUT_PROJECT_CODE;
 
-    @FindBy(css = "#inputDescription")
+    @FindBy(id = "description-area")
     private WebElement INPUT_PROJECT_DESCRIPTION;
 
     @FindBy(css = "#private-access-type")

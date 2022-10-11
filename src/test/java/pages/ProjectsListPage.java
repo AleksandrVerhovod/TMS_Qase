@@ -28,10 +28,10 @@ public class ProjectsListPage extends BasePage {
     @FindBy(xpath = "//a[text()='DemoQAProject']//ancestor::tr//div[@class='dropdown']//a[@class='btn btn-dropdown']")
     private WebElement DROPDOWN_MENU;
 
-    @FindBy(xpath = "//a[text()='DemoQAProject']//ancestor::tr//div[@class='dropdown']//a[text()='Delete']")
+    @FindBy(xpath = "//a[text()='DemoQAProject']//ancestor::tr//div[@class='dropdown']//button[text()='Delete']")
     private WebElement DROPDOWN_DELETE_BUTTON;
 
-    @FindBy(xpath = "//button[@type='submit']//i")
+    @FindBy(xpath = "//span[text()='Delete project']")
     private WebElement DELETE_PROJECT_BUTTON;
 
     @FindBy(xpath = "//a[text()='DemoQAProject']")
