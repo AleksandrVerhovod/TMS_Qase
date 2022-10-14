@@ -4,13 +4,15 @@ This project was prepared by Aleksandr Verhovod for the diploma work at the Teac
 
 ###  Tools:
 <p align="left">
+<a target="blank"><img align="center" src="https://internship.technovalley.co.in/java/images/Java.png" height="40" width="52" /></a> &nbsp;  
+<a target="blank"><img align="center" src="https://blog.jetbrains.com/wp-content/uploads/2019/08/logo.png" height="40" width="40" /></a> &nbsp;   
 <a target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" height="40" width="40" /></a> &nbsp;
-<a target="blank"><img align="center" src="https://www.pinclipart.com/picdir/big/315-3152417_testng-is-also-for-the-java-programming-language.png" height="40" width="160" /></a> &nbsp;
-  <a target="blank"><img align="center" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*0cT0thipKJ1obKHbBkmfRg.png" height="40" width="160" /></a>
-  
-  
+<a target="blank"><img align="center" src="https://www.pinclipart.com/picdir/big/315-3152417_testng-is-also-for-the-java-programming-language.png" height="35" width="155" /></a> &nbsp;
+<a target="blank"><img align="center" src="https://cdn-images-1.medium.com/fit/t/1600/480/1*0cT0thipKJ1obKHbBkmfRg.png" height="40" width="160" /></a> 
+<a target="blank"><img align="center" src="https://blog.idrsolutions.com/wp-content/uploads/2018/05/jenkins-logo.png" height="40" width="125" /></a>  &nbsp;
+<a target="blank"><img align="center" src="https://i.ytimg.com/vi/8nAgzJea1L8/maxresdefault.jpg" height="40" width="71" /></a>  &nbsp;
+<a target="blank"><img align="center" src="https://bellatrix.solutions/content/uploads/Allure_logo.png" height="70" width="130" /></a>  
 </p>
-
 
 
 
