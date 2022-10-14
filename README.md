@@ -2,6 +2,15 @@
 This project was prepared by Aleksandr Verhovod for the diploma work at the Teach Me Skills school
 
 
+###  Documentation:
+<p align="left">
+<a target="blank">Check List &nbsp;<img align="center" src="https://www.clipartmax.com/png/middle/218-2182558_checklist-of-corporate-finance-assignment-help-check-list-icon-flat.png" height="40" width="45" /></a> &nbsp;  
+
+<a target="blank">TRR &nbsp;<img align="center" src="https://blog.jetbrains.com/wp-content/uploads/2019/08/logo.png" height="40" width="40" /></a> &nbsp;   
+ 
+</p>
+
+
 ###  Tools:
 <p align="left">
 <a target="blank"><img align="center" src="https://internship.technovalley.co.in/java/images/Java.png" height="40" width="52" /></a> &nbsp;  
