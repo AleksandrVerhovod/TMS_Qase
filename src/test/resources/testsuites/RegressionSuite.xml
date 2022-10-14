@@ -4,6 +4,11 @@
     <parameter name="browserType" value="chrome"/>
     <test name="Registration" thread-count="1" parallel="methods">
         <classes>
+            <class name="apitests.QaseAPITest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Registration" thread-count="1" parallel="methods">
+        <classes>
             <class name="tests.RegistrationTest"/>
             <!--            <class name="tests.OnboardingTest"/>-->
             <class name="tests.LogInTest"/>

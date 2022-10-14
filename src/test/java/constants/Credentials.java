@@ -11,6 +11,8 @@ public class Credentials {
 
     public static final String DEMO_QA_PROJECT = "DemoQAProject";
 
+    public static final String TOKEN = "6c7e12602078823ac7f7480f19a490cbdda68a89";
+
 
 
 }

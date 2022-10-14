@@ -203,9 +203,20 @@ public class GenerateTestData {
     }
 
 
+    public static String generateAPItitle() {
+        faker = new Faker();
+        return faker.funnyName().name();
+    }
 
+    public static String generateAPIcode() {
+        faker = new Faker();
+        return faker.code().asin();
+    }
 
-
+    public static String generateAPIDescription() {
+        faker = new Faker();
+        return faker.chuckNorris().fact();
+    }
 
 
 }

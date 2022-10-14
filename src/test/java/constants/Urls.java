@@ -17,4 +17,10 @@ public class Urls {
 
     public static final String CREATE_REQUIREMENTS = "/requirement/DP";
 
+    public static final String GET_ALL_PROJECTS = "/project";
+    public static final String GET_ALL_PROJECTSWrong = "/project2";
+    public static final String GET_PROJECT = "/%s"; //%s - projectCode
+    public static final String POST_ADD_PROJECT = "/project";
+    public static final String DELETE_API_PROJECT = "/project/%s"; //%s - projectCode
+
 }
