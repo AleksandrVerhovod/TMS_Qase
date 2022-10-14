@@ -12,7 +12,7 @@ This project was prepared by Aleksandr Verhovod for the diploma work at the Teac
 
   <a target="blank"><img align="center" src="https://blog.idrsolutions.com/wp-content/uploads/2018/05/jenkins-logo.png" height="40" width="125" /></a>  &nbsp;
 <a target="blank"><img align="center" src="https://i.ytimg.com/vi/8nAgzJea1L8/maxresdefault.jpg" height="40" width="71" /></a>  &nbsp;
-<a target="blank"><img align="center" src="https://bellatrix.solutions/content/uploads/Allure_logo.png" height="70" width="130" /></a>  
+<a target="blank"><img align="center" src="https://bellatrix.solutions/content/uploads/Allure_logo.png" height="80" width="137" /></a>  
 </p>
 
 
