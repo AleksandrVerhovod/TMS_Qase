@@ -24,7 +24,6 @@ public class CreateTestCaseTest extends BaseTest {
         LOGGER.info("Demo Login done");
         ProjectRepositoryPage projectRepositoryPage = new ProjectRepositoryPage(getDriver());
         LOGGER.info(String.format("Page %s initialized", ProjectRepositoryPage.class.getName()));
-
         projectRepositoryPage.openProjectRepositoryPage()
                 .clickAddTestCase();
         CreateTestCasePage createTestCasePage = new CreateTestCasePage(getDriver());

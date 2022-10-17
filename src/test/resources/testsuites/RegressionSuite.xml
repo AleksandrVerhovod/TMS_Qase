@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Test">
-    <parameter name="browserType" value="chrome"/>
-    <test name="Registration" thread-count="3" parallel="methods">
+    <parameter name="browserType" value="firefox"/>
+    <test name="API" thread-count="1" parallel="methods">
         <classes>
             <class name="apitests.QaseAPITest"/>
         </classes>
     </test> <!-- Test -->
-    <test name="Registration" thread-count="1" parallel="methods">
+    <test name="Registration" thread-count="2" parallel="methods">
         <classes>
             <class name="tests.RegistrationTest"/>
             <!--            <class name="tests.OnboardingTest"/>-->
@@ -15,7 +15,7 @@
             <class name="tests.ProjectsListTest"/>
         </classes>
     </test> <!-- Test -->
-    <test name="Created Data">
+    <test name="Created Data" thread-count="2" parallel="methods">
         <classes>
             <class name="tests.CreateProjectTest"/>
             <class name="tests.CreateTestCaseTest"/>
