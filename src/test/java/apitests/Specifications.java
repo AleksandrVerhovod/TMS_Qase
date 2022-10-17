@@ -8,7 +8,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
 public class Specifications {
-    public static String URL = "https://api.qase.io/v1/";
+
 
     public static RequestSpecification requestSpecification(String url) {
         return new RequestSpecBuilder()
@@ -34,6 +34,7 @@ public class Specifications {
                 .expectStatusCode(400)
                 .build();
     }
+
     public static ResponseSpecification responseSpecError404() {
         return new ResponseSpecBuilder()
                 .expectStatusCode(404)

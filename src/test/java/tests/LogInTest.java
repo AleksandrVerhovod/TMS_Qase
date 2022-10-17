@@ -9,12 +9,11 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProjectsListPage;
 import testdata.PrepareLoginData;
-import testdata.PrepareOnboardingData;
-import testdata.PrepareRegistrationData;
 
 
 public class LogInTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(LogInTest.class.getName());
+
     @Test(priority = 1)
     @Description("The user login with valid data and select checkbox 'Remember me'")
     public void loginValidUserWithCheckboxTest() {
@@ -45,7 +44,6 @@ public class LogInTest extends BaseTest {
         LOGGER.info("Check if button 'Create' is displayed");
         Assert.assertTrue(projectsPage.isCreateButtonDisplayed());
     }
-
 
     @Test(priority = 1)
     @Description("The user login with valid password and unregistered email")
@@ -85,5 +83,4 @@ public class LogInTest extends BaseTest {
         LOGGER.info("Check if message is displayed");
         Assert.assertEquals(loginPage.isErrorMessage(), "Заполните это поле.");
     }
-
 }

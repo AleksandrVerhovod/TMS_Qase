@@ -1,5 +1,6 @@
 package drivermanager;
 
+import constants.Credentials;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -24,7 +25,7 @@ public class RemoteDriverManager extends DriverManager {
 
         try {
 
-            RemoteWebDriver RemoteWebDriver = new RemoteWebDriver(new URL("https://SouceLabsVerhovod:90156063-dad8-45e5-8f95-9aedaf870fd8@ondemand.us-west-1.saucelabs.com:443/wd/hub"), browserOptions);
+            RemoteWebDriver RemoteWebDriver = new RemoteWebDriver(new URL(Credentials.REMOTE), browserOptions);
             threadLocalDriver.set(RemoteWebDriver);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);

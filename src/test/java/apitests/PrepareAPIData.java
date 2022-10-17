@@ -8,6 +8,7 @@ import utils.GenerateTestData;
 public class PrepareAPIData {
 
     private static final Logger LOGGER = LogManager.getLogger(PrepareCreateDefectData.class.getName());
+
     public static ProjectAPIModel getProjectData() {
         LOGGER.info("Generate valid defect data");
         return ProjectAPIModel
@@ -18,13 +19,11 @@ public class PrepareAPIData {
                 .build();
     }
 
-    public static ProjectAPIModel getProjectCode () {
+    public static ProjectAPIModel getProjectCode() {
         LOGGER.info("Generate requirements project code");
         return ProjectAPIModel
                 .builder()
                 .code("APITEST")
                 .build();
     }
-
-
 }

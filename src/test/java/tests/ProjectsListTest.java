@@ -10,8 +10,6 @@ import pages.ProjectRepositoryPage;
 import pages.ProjectsListPage;
 import pages.services.CreateDemoProject;
 import pages.services.LoginSite;
-import testdata.PrepareRegistrationData;
-
 
 public class ProjectsListTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(ProjectsListTest.class.getName());
@@ -71,5 +69,4 @@ public class ProjectsListTest extends BaseTest {
         LOGGER.info("Check if accepted favorite button is displayed");
         Assert.assertTrue(projectsListPage.isFavoriteButtonActiveDispalyed(), "The favorite project is not selected");
     }
-
 }

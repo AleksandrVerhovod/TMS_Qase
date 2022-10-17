@@ -13,5 +13,4 @@ public class OnboardingModel {
     private String companyDescribe;
     private String companyIndustry;
     private String workEmail;
-
 }

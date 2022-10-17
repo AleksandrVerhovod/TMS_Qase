@@ -9,14 +9,13 @@ import org.testng.annotations.Test;
 import pages.CreateRequirementsPage;
 import pages.services.LoginSite;
 import testdata.PrepareCreateRequirementsData;
-import testdata.PrepareCreateTestCase;
-import testdata.PrepareRegistrationData;
 
 public class CreateRequirementsTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(CreateRequirementsTest.class.getName());
+
     @Test
     @Description("The user creates a new requirement with valid values for the fields")
-    public void createRequirementsValidDataTest () {
+    public void createRequirementsValidDataTest() {
         LoginSite loginSite = new LoginSite(getDriver());
         LOGGER.info(String.format("Page %s initialized", LoginSite.class.getName()));
         loginSite.demoLogin();
@@ -30,6 +29,5 @@ public class CreateRequirementsTest extends BaseTest {
                 .fillNewRequirement(createRequirementsModel);
         LOGGER.info("Check if title of the new requirement is displayed");
         Assert.assertTrue(createRequirementsPage.getTitleRequirements(createRequirementsModel.getTitle()));
-
     }
 }

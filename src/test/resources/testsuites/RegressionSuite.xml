@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Test">
     <parameter name="browserType" value="chrome"/>
-    <test name="Registration" thread-count="1" parallel="methods">
+    <test name="Registration" thread-count="3" parallel="methods">
         <classes>
             <class name="apitests.QaseAPITest"/>
         </classes>

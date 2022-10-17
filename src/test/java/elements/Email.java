@@ -13,12 +13,12 @@ public class Email {
 
     private WebDriver driver;
 
-    public Email (WebDriver driver) {
+    public Email(WebDriver driver) {
         this.driver = driver;
     }
 
     public void sendEmailField(String option) {
-        String listFinalXpath = String.format(EMAIL_FIELDS_XPATH,option);
+        String listFinalXpath = String.format(EMAIL_FIELDS_XPATH, option);
         LOGGER.debug(String.format("Send into field %s email", option));
         driver.findElement(By.xpath(listFinalXpath)).sendKeys(GenerateTestData.generateEmail());
     }

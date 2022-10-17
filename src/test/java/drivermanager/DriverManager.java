@@ -3,9 +3,10 @@ package drivermanager;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
+
 //абстрактный класс с абстрактным методом createDriver, который имплементируется у всех наследников,
 // опишем все общие методы, чтобы работать с драйвером (размер, таймауты)
-public abstract class  DriverManager {
+public abstract class DriverManager {
     protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
     public abstract void createDriver();

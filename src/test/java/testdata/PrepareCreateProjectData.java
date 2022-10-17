@@ -9,6 +9,7 @@ import utils.GenerateTestData;
 
 public class PrepareCreateProjectData {
     private static final Logger LOGGER = LogManager.getLogger(PrepareCreateProjectData.class.getName());
+
     public static CreateProjectModel getCreateProjectWithValidData() {
         LOGGER.info("Generate valid project data");
         return CreateProjectModel

@@ -9,6 +9,7 @@ import utils.GenerateTestData;
 
 public class PrepareCreateDefectData {
     private static final Logger LOGGER = LogManager.getLogger(PrepareCreateDefectData.class.getName());
+
     public static CreateDefectModel getValidDefectData() {
         LOGGER.info("Generate valid defect data");
         return CreateDefectModel
@@ -19,5 +20,4 @@ public class PrepareCreateDefectData {
                 .severity(GenerateTestData.getSeverity())
                 .build();
     }
-
 }

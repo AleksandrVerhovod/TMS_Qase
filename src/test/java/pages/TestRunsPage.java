@@ -46,12 +46,14 @@ public class TestRunsPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", START_NEW_TR_BUTTON));
         return START_NEW_TR_BUTTON.isDisplayed();
     }
+
     @Step("Open test runs page")
     public TestRunsPage openTestRunsPage() {
         LOGGER.debug("Attempt to open URL: " + QASE_LOGIN_PAGE + TEST_RUN_PAGE);
         driver.get(QASE_LOGIN_PAGE.concat(Urls.TEST_RUN_PAGE));
         return this;
     }
+
     @Step("Click start new test run")
     public TestRunsPage clickStartNewTestRun() {
         LOGGER.debug(String.format("Attempt to find click button %s", START_NEW_TR_BUTTON));
@@ -80,6 +82,7 @@ public class TestRunsPage extends BasePage {
         LOGGER.debug(String.format("Attempt to click button: %s", DONE_TC_ADDED_BUTTON));
         return this;
     }
+
     @Step("Click 'StartTestRun' button")
     public TestRunsPage clickStartTestRun() {
         LOGGER.debug(String.format("Attempt to click button: %s", START_RUN_BUTTON));
@@ -92,6 +95,4 @@ public class TestRunsPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find message: %s", CONFIRMATION_MESSAGE_CREATE_TC));
         return CONFIRMATION_MESSAGE_CREATE_TC.isDisplayed();
     }
-
-
 }

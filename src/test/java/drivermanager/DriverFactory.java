@@ -1,4 +1,5 @@
 package drivermanager;
+
 //инициализация драйвера в зависимости от того,, кокой из типов перечислений применяется в тесте
 public class DriverFactory {
     public DriverManager getManager(DriverType driverType) {

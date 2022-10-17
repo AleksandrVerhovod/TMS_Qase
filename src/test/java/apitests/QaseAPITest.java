@@ -14,11 +14,10 @@ public class QaseAPITest {
     private static final Logger LOGGER = LogManager.getLogger(QaseAPITest.class.getName());
     private String projectCode;
 
-
-    @Test (priority = 1)
+    @Test(priority = 1)
     @Description("Create a project test")
     public void createProjectTest() {
-        Specifications.installSpec(Specifications.requestSpecification(Specifications.URL), Specifications.responseSpecOK200());
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         LOGGER.warn("Prepare data for body request");
         ProjectAPIModel projectAPI = PrepareAPIData.getProjectData();
         LOGGER.info("Sending a POST request to create a project");
@@ -31,10 +30,10 @@ public class QaseAPITest {
                 .body("status", equalTo(true)));
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2)
     @Description("Delete project test")
     public void deleteProjectTest() {
-        Specifications.installSpec(Specifications.requestSpecification(Specifications.URL), Specifications.responseSpecOK200());
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecOK200());
         ProjectAPIModel projectAPIModel = PrepareAPIData.getProjectCode();
         LOGGER.info("Sending a DELETE request to delete a project");
         projectCode = String.valueOf(given()
@@ -44,13 +43,12 @@ public class QaseAPITest {
                 .delete(String.format(Urls.DELETE_API_PROJECT, "APITEST"))
                 .then()
                 .body("status", equalTo(true)));
-
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2)
     @Description("Test for finding an error when requesting an incorrect address")
     public void getAllProjectsNegativeTest() {
-        Specifications.installSpec(Specifications.requestSpecification(Specifications.URL), Specifications.responseSpecError404());
+        Specifications.installSpec(Specifications.requestSpecification(Urls.URL_API), Specifications.responseSpecError404());
         LOGGER.info("Sending a GET request to get a list of projects");
         given()
                 .when()
@@ -58,5 +56,4 @@ public class QaseAPITest {
                 .then()
                 .log().body();
     }
-
 }

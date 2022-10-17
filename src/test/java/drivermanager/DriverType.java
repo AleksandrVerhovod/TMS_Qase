@@ -1,4 +1,5 @@
 package drivermanager;
+
 //Перечисление
 public enum DriverType {
     CHROME,

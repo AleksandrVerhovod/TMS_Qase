@@ -35,5 +35,4 @@ public class Checkbox {
         LOGGER.debug(String.format("Select Describe checkbox by " + listFinalXpath));
         driver.findElement(By.xpath(listFinalXpath)).click();
     }
-
 }
