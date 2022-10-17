@@ -10,5 +10,4 @@ public class CreateDefectModel {
     private String actualResult;
     private String milestone;
     private String severity;
-
 }

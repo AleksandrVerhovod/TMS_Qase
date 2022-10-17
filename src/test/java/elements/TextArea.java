@@ -12,13 +12,13 @@ public class TextArea {
     private String labelText;
     private WebDriver driver;
 
-    public TextArea(WebDriver driver,String labelText) {
+    public TextArea(WebDriver driver, String labelText) {
         this.labelText = labelText;
         this.driver = driver;
     }
 
-    public void inputTextArea (String text) {
-        String finalXpath = String.format(TEXT_AREA_XPATH,labelText);
+    public void inputTextArea(String text) {
+        String finalXpath = String.format(TEXT_AREA_XPATH, labelText);
         LOGGER.debug(String.format("Send text into " + labelText));
         driver.findElement(By.xpath(finalXpath)).sendKeys(text);
     }

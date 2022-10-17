@@ -11,7 +11,7 @@ public class DropdownTestCase {
     private WebDriver driver;
     private String labelText;
 
-    public DropdownTestCase(WebDriver driver,String labelText) {
+    public DropdownTestCase(WebDriver driver, String labelText) {
         this.labelText = labelText;
         this.driver = driver;
     }
@@ -37,7 +37,4 @@ public class DropdownTestCase {
         LOGGER.debug(String.format("Select option " + option));
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
-
-
-
 }

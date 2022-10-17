@@ -46,47 +46,55 @@ public class ProjectsListPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", CREATE_PROJECT_BUTTON));
         return CREATE_PROJECT_BUTTON.isDisplayed();
     }
+
     @Step("Check if 'Create project' button is displayed")
     public boolean isCreateButtonDisplayed() {
         LOGGER.debug(String.format("Attempt to find button: %s", CREATE_PROJECT_BUTTON));
         return CREATE_PROJECT_BUTTON.isDisplayed();
     }
+
     @Step("Open projects list page")
     public ProjectsListPage openProjectsListPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.PROJECTS_LIST_PAGE)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.PROJECTS_LIST_PAGE));
         return this;
     }
+
     @Step("Click favorite button deactivate")
     public ProjectsListPage activateFavoriteProject() {
         LOGGER.debug(String.format("Attempt to click button: %s", FAVORITE_PROJECT_BUTTON_NO_ACTIVE));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", FAVORITE_PROJECT_BUTTON_NO_ACTIVE);
-         return this;
+        return this;
     }
+
     @Step("Click favorite button active")
     public ProjectsListPage deActivateFavoriteProject() {
         LOGGER.debug(String.format("Attempt to click button: %s", FAVORITE_PROJECT_BUTTON_ACTIVE));
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", FAVORITE_PROJECT_BUTTON_ACTIVE);
         return this;
     }
+
     @Step("Check if favorite button active is displayed")
     public boolean isFavoriteButtonActiveDispalyed() {
         LOGGER.debug(String.format("Attempt to find favorite button: %s", FAVORITE_PROJECT_BUTTON_ACTIVE));
         return FAVORITE_PROJECT_BUTTON_ACTIVE.isDisplayed();
     }
+
     @Step("Check if favorite button deactivate is displayed")
     public boolean isFavoriteButtonDeactiveDispalyed() {
         LOGGER.debug(String.format("Attempt to find favorite button: %s", FAVORITE_PROJECT_BUTTON_NO_ACTIVE));
         return FAVORITE_PROJECT_BUTTON_NO_ACTIVE.isDisplayed();
     }
+
     @Step("Click 'Create project' button")
     public CreateProjectPage addNewProject() {
         LOGGER.debug(String.format("Attempt to click button: %s", CREATE_PROJECT_BUTTON));
         CREATE_PROJECT_BUTTON.click();
         return new CreateProjectPage(driver);
     }
+
     @Step("Delete project")
     public ProjectsListPage deleteProject() {
         LOGGER.debug(String.format("Attempt to click button: %s", DROPDOWN_MENU));
@@ -97,6 +105,7 @@ public class ProjectsListPage extends BasePage {
         DELETE_PROJECT_BUTTON.click();
         return this;
     }
+
     @Step("Check if created project name is displayed")
     public boolean isProjectNameDisplayed() {
         LOGGER.debug(String.format("Check if name project is displayed: %s", NAME_DEMO_QA_PROJECT));
@@ -106,5 +115,4 @@ public class ProjectsListPage extends BasePage {
             return false;
         }
     }
-
 }

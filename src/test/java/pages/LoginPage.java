@@ -43,12 +43,14 @@ public class LoginPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", LOGIN_BUTTON));
         return LOGIN_BUTTON.isDisplayed();
     }
+
     @Step("Open login page")
     public LoginPage openLoginPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE));
         driver.get(Urls.QASE_LOGIN_PAGE);
         return this;
     }
+
     @Step("Fill without confirm user form")
     public ProjectsListPage sendNoConfirmUserForm() {
         EMAIL_INPUT.sendKeys(Credentials.EMAIL_NO_CONFIRM);
@@ -59,6 +61,7 @@ public class LoginPage extends BasePage {
         LOGIN_BUTTON.click();
         return new ProjectsListPage(driver);
     }
+
     @Step("Fill accepted user form")
     public ProjectsListPage sendAcceptedUserForm() {
         EMAIL_INPUT.sendKeys(Credentials.EMAIL_VALID);
@@ -69,6 +72,7 @@ public class LoginPage extends BasePage {
         LOGIN_BUTTON.click();
         return new ProjectsListPage(driver);
     }
+
     @Step("Fill user form by valid random data")
     public ProjectsListPage sendLoginForm(LoginModel loginModel) {
         EMAIL_INPUT.sendKeys(loginModel.getEmail());
@@ -86,28 +90,30 @@ public class LoginPage extends BasePage {
         CHECKBOX_REMEMBER_ME.click();
         return this;
     }
+
     @Step("Click link 'Sign Up'")
     public LoginPage signUpButtonClick() {
         LOGGER.debug(String.format("Attempt to button: %s", SIGN_UP_BUTTON));
         SIGN_UP_BUTTON.click();
         return this;
     }
+
     @Step("Click link 'Forgot your password'")
     public LoginPage forgotYourPasswordButtonClick() {
         LOGGER.debug(String.format("Attempt to button: %s", FORGOT_YOUR_PASSWORD_BUTTON));
         FORGOT_YOUR_PASSWORD_BUTTON.click();
         return this;
     }
+
     @Step("Check if Error message is displayed")
     public boolean isErrorMessageDisplayed() {
         LOGGER.debug(String.format("Attempt to find message: %s", ERROR_MESSAGE));
         return ERROR_MESSAGE.isDisplayed();
     }
+
     @Step("Get text by error message")
     public String isErrorMessage() {
         LOGGER.debug(String.format("Attempt to get attribute of: %s", EMAIL_INPUT));
         return EMAIL_INPUT.getAttribute("validationMessage");
     }
-
-
 }

@@ -38,6 +38,7 @@ public class CreateRequirementsPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", CREATE_REQUIREMENT_BUTTON));
         return CREATE_REQUIREMENT_BUTTON.isDisplayed();
     }
+
     @Step("Get title created requirement Project")
     public boolean getTitleRequirements(String option) {
         String titleFinalXpath = String.format(REQUIREMENT_TITLE, option);
@@ -49,12 +50,14 @@ public class CreateRequirementsPage extends BasePage {
             return false;
         }
     }
+
     @Step("Open create requirements page")
     public CreateRequirementsPage openCreateReqPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.CREATE_REQUIREMENTS)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.CREATE_REQUIREMENTS));
         return this;
     }
+
     @Step("Click 'Create requirement' button")
     public CreateRequirementsPage clickCreateReqButton() {
         LOGGER.debug(String.format("Attempt to click button: %s", CREATE_REQUIREMENT_BUTTON));
@@ -77,6 +80,4 @@ public class CreateRequirementsPage extends BasePage {
         LOGGER.debug(String.format("Attempt to click button: %s", SAVE_REQUIREMENT_BUTTON));
         SAVE_REQUIREMENT_BUTTON.click();
     }
-
-
 }

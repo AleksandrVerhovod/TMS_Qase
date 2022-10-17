@@ -20,7 +20,7 @@ public class TestListeners implements ITestListener {
     }
 
     @Override
-    @Attachment ()
+    @Attachment()
     public void onTestFailure(ITestResult iTestResult) {
         Object currentClass = iTestResult.getInstance();
         WebDriver driver = ((BaseTest) currentClass).getDriver();
@@ -40,8 +40,8 @@ public class TestListeners implements ITestListener {
 
     @Override
     public void onStart(ITestContext iTestContext) {
-
     }
+
     @Override
     public void onFinish(ITestContext iTestContext) {
     }

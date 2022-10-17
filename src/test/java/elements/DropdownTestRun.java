@@ -10,10 +10,12 @@ public class DropdownTestRun {
     private static final Logger LOGGER = LogManager.getLogger(PrepareRegistrationData.class.getName());
     private WebDriver driver;
     private String labelText;
+
     public DropdownTestRun(WebDriver driver, String labelText) {
         this.labelText = labelText;
         this.driver = driver;
     }
+
     private static final String BUTTON_XPATH = "//label[contains(@class,'control-label') and text()='%s']//..//div[text()]";
     private static final String BUTTON_DEFAULT_ASSIGNEE_XPATH = "//label[contains(@for,'selectAssignee') and text()='%s']//..//div[contains(@class,'notranslate')]";
 

@@ -7,7 +7,6 @@ public class Priority {
 
     public static List<String> getPriority() {
         return Arrays.asList(
-                "Not set",
                 "High",
                 "Medium",
                 "Low");

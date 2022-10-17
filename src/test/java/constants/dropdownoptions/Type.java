@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Type {
 
-    public static List<String> getType () {
+    public static List<String> getType() {
         return Arrays.asList(
                 "Other",
                 "Functional",

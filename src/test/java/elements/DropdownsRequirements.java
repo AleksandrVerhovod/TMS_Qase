@@ -11,10 +11,12 @@ public class DropdownsRequirements {
     private static final Logger LOGGER = LogManager.getLogger(PrepareRegistrationData.class.getName());
     private WebDriver driver;
     private String labelText;
+
     public DropdownsRequirements(WebDriver driver, String labelText) {
         this.labelText = labelText;
         this.driver = driver;
     }
+
     private static final String BUTTON_XPATH = "//label[contains(@class,'control-label') and text()='%s']//..//span[@aria-live='polite']//..";
     private static final String SELECT_OPTION_XPATH = "//div[contains(@id, 'react') and text()='%s']";
 
@@ -26,5 +28,4 @@ public class DropdownsRequirements {
         LOGGER.debug(String.format("Select option " + option));
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
-
 }

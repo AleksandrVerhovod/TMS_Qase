@@ -20,5 +20,4 @@ public class PrepareCreateRequirementsData {
                 .type(GenerateTestData.getTypeReq())
                 .build();
     }
-
 }
