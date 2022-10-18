@@ -38,8 +38,6 @@ public class CreateTestCasePage extends BasePage {
     private WebElement BUTTON_STEPS;
     @FindBy(xpath = "//div[text()='Classic']")
     private WebElement SELECT_STEPS_OPTION;
-//    private JavascriptExecutor js = (JavascriptExecutor) driver;
-
 
     public CreateTestCasePage(WebDriver driver) {
         super(driver);
