@@ -4,7 +4,7 @@ This project was prepared by Aleksandr Verhovod for the diploma work at the Teac
 
 ###  Documentation:
 <p align="left">
-<a href="https://docs.google.com/spreadsheets/d/1laR8khCojCGP1YQGUdpKQm-vi4-wC-PqyEWmN-kjCd8/edit?usp=sharing" target="blank">CheckList &nbsp;<img align="center" src="https://www.pngmart.com/files/8/Checklist-PNG-Photo.png" height="40" width="45" /></a> &nbsp;  
+<a href="https://docs.google.com/spreadsheets/d/1laR8khCojCGP1YQGUdpKQm-vi4-wC-PqyEWmN-kjCd8/edit?usp=sharing" target="blank">TestCases &nbsp;<img align="center" src="https://www.pngmart.com/files/8/Checklist-PNG-Photo.png" height="40" width="45" /></a> &nbsp;  
 
 <a href="https://www.canva.com/design/DAFPBSjm5mM/DfeDQdkh_V14rO5ySyY8mA/view?utm_content=DAFPBSjm5mM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="blank">Presentation &nbsp;<img align="center" src="https://eus-www.sway-cdn.com/s/ucxs4mdOxMlz9Jlc/images/ZY4Gj-4Y2e9Pgw?quality=1848&allowAnimation=true" height="40" width="40" /></a> &nbsp;   
  
