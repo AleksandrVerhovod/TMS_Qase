@@ -69,7 +69,6 @@ public class ProjectsListTest extends BaseTest {
         LOGGER.info("Check if accepted favorite button is displayed");
         Assert.assertTrue(projectsListPage.isFavoriteButtonActiveDispalyed(), "The favorite project is not selected");
     }
-
     @Test(priority = 3)
     @Description("The user unselect favorite project from the list")
     public void unselectFavoriteProjectTest() {
