@@ -13,12 +13,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreateTestCasePage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(CreateTestCasePage.class.getName());
+    private JavascriptExecutor js = (JavascriptExecutor) driver;
     @FindBy(id = "title")
     private WebElement TITLE_TEST_CASE;
-    @FindBy (xpath = "//label[text()='Priority']//..//button[@type='button']")
+    @FindBy(xpath = "//label[text()='Priority']//..//button[@type='button']")
     private WebElement PRIORITY;
 
-    @FindBy (xpath = "//label[text()='Type']//..//button[@type='button']")
+    @FindBy(xpath = "//label[text()='Type']//..//button[@type='button']")
     private WebElement TYPE;
 
     @FindBy(xpath = "//div[contains(@class,'row')]//label[text()='Milestone']//..//span[@aria-live='polite']//..")
@@ -37,7 +38,7 @@ public class CreateTestCasePage extends BasePage {
     private WebElement BUTTON_STEPS;
     @FindBy(xpath = "//div[text()='Classic']")
     private WebElement SELECT_STEPS_OPTION;
-    private JavascriptExecutor js = (JavascriptExecutor) driver;
+//    private JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
     public CreateTestCasePage(WebDriver driver) {
@@ -49,11 +50,13 @@ public class CreateTestCasePage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", SAVE_BUTTON));
         return SAVE_BUTTON.isDisplayed();
     }
+
     @Step("Check if confirmation message about created test case is displayed")
     public boolean isConfirmationMessageCreatTestCaseDisplayed() {
         LOGGER.debug(String.format("Attempt to find message: %s", CONFIRMATION_MESSAGE_CREATE_TC));
         return CONFIRMATION_MESSAGE_CREATE_TC.isDisplayed();
     }
+
     @Step("Fill test case form")
     public void fillInCreateTestCaseForm(CreateTestCaseModel newTestCase) {
         TITLE_TEST_CASE.sendKeys(newTestCase.getTitle());
@@ -67,11 +70,11 @@ public class CreateTestCasePage extends BasePage {
         new DropdownTestCase(driver, "Severity").selectOptionsInTestCase(newTestCase.getSeverity());
         LOGGER.debug(String.format("Attempt to select Severity: %s", newTestCase.getSeverity()));
         LOGGER.debug(String.format("Attempt to scroll to: %s", PRIORITY));
-        js.executeScript("arguments[0].scrollIntoView()", PRIORITY);
+        scrollToTheElement(PRIORITY);
         new DropdownTestCase(driver, "Priority").selectOptionsInTestCase(newTestCase.getPriority());
         LOGGER.debug(String.format("Attempt to select Priority: %s", newTestCase.getPriority()));
         LOGGER.debug(String.format("Attempt to scroll to: %s", TYPE));
-        js.executeScript("arguments[0].scrollIntoView()", TYPE);
+        scrollToTheElement(TYPE);
         new DropdownTestCase(driver, "Type").selectOptionsInTestCase(newTestCase.getType());
         LOGGER.debug(String.format("Attempt to select Type: %s", newTestCase.getType()));
         new DropdownTestCase(driver, "Layer").selectOptionsInTestCase(newTestCase.getLayer());
@@ -79,7 +82,7 @@ public class CreateTestCasePage extends BasePage {
         new DropdownTestCase(driver, "Is flaky").selectOptionsInTestCase(newTestCase.getIsFlaky());
         LOGGER.debug(String.format("Attempt to select Is flaky: %s", newTestCase.getIsFlaky()));
         LOGGER.debug(String.format("Attempt to scroll to: %s", MILESTONE));
-        js.executeScript("arguments[0].scrollIntoView()", MILESTONE);
+        scrollToTheElement(MILESTONE);
         new DropdownTestCase(driver, "Milestone").selectOptionsMilestoneInTestCase(newTestCase.getMilestone());
         LOGGER.debug(String.format("Attempt to select Milestone: %s", newTestCase.getMilestone()));
         new DropdownTestCase(driver, "Behavior").selectOptionsInTestCase(newTestCase.getBehavior());
@@ -91,13 +94,13 @@ public class CreateTestCasePage extends BasePage {
         new TextArea(driver, "Post-conditions").inputTextArea(newTestCase.getPostConditions());
         LOGGER.debug(String.format("Input Post-conditions: %s", newTestCase.getPostConditions()));
         LOGGER.debug(String.format("Attempt to scroll to: %s", BUTTON_STEPS));
-        js.executeScript("arguments[0].scrollIntoView()", BUTTON_STEPS);
+        scrollToTheElement(BUTTON_STEPS);
         LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_STEPS));
         BUTTON_STEPS.click();
         LOGGER.debug(String.format("Attempt to click button: %s", SELECT_STEPS_OPTION));
         SELECT_STEPS_OPTION.click();
         LOGGER.debug(String.format("Attempt to scroll to: %s", ADD_STEPS_BUTTON));
-        js.executeScript("arguments[0].scrollIntoView()", ADD_STEPS_BUTTON);
+        scrollToTheElement(ADD_STEPS_BUTTON);
         LOGGER.debug(String.format("Attempt to click button: %s", ADD_STEPS_BUTTON));
         ADD_STEPS_BUTTON.click();
         new TextArea(driver, "Action").inputTextArea(newTestCase.getAction());
@@ -109,5 +112,4 @@ public class CreateTestCasePage extends BasePage {
         LOGGER.debug(String.format("Attempt to click button: %s", SAVE_BUTTON));
         SAVE_BUTTON.click();
     }
-
 }

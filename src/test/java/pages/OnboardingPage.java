@@ -39,12 +39,14 @@ public class OnboardingPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find number: %s", NUMBER_ABOUT_YOU));
         return NUMBER_ABOUT_YOU.isDisplayed();
     }
+
     @Step("Open onboarding page")
     public OnboardingPage openOnboardingPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.ONBOARDING_PAGE)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.ONBOARDING_PAGE));
         return this;
     }
+
     @Step("Fill onboarding form by valid random data")
     public ProjectsListPage sendOnboardingValidData(OnboardingModel onboardingModel) {
         FULL_NAME_INPUT.sendKeys(onboardingModel.getFullName());
@@ -70,6 +72,4 @@ public class OnboardingPage extends BasePage {
         return new ProjectsListPage(driver);
 
     }
-
-
 }

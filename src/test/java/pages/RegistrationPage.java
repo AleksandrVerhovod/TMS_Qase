@@ -45,24 +45,28 @@ public class RegistrationPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", CREATE_BUTTON));
         return CREATE_BUTTON.isDisplayed();
     }
+
     @Step("Open registration page")
     public RegistrationPage openRegistrationPage() {
         LOGGER.debug(String.format("Attempt to open URL: %s", Urls.QASE_LOGIN_PAGE.concat(Urls.SIGNUP_PAGE)));
         driver.get(Urls.QASE_LOGIN_PAGE.concat(Urls.SIGNUP_PAGE));
         return this;
     }
+
     @Step("Click checkbox 'Agree privacy policy'")
     public RegistrationPage clickCheckboxAgreePrivacyPolicy() {
         LOGGER.debug(String.format("Attempt to select checkbox: %s", CHECKBOX_AGREE_PRIVACY));
         CHECKBOX_AGREE_PRIVACY.click();
         return this;
     }
+
     @Step("Click checkbox 'News letter'")
     public RegistrationPage clickCheckboxNewsletter() {
         LOGGER.debug(String.format("Attempt to select checkbox 'Newsletter' by %s", CHECKBOX_NEWSLETTERS));
         CHECKBOX_NEWSLETTERS.click();
         return this;
     }
+
     @Step("Fill registration form by valid random data")
     public ActivatedPage sendRegistrationForm(RegistrationModel registrationModel) {
         EMAIL_INPUT.sendKeys(registrationModel.getEmail());
@@ -75,23 +79,24 @@ public class RegistrationPage extends BasePage {
         LOGGER.debug(String.format("Attempt to click create button: %s", CREATE_BUTTON));
         return new ActivatedPage(driver);
     }
+
     @Step("Get text message error email")
     public String errorMessageEmailInput() {
         String attribute = EMAIL_INPUT.getAttribute("validationMessage");
         LOGGER.debug(String.format("Attempt to find message: %s", attribute));
         return attribute;
     }
+
     @Step("Get text message error confirm password")
     public String errorMessageConfirmPassInput() {
         String attribute = CONFIRM_PASSWORD_INPUT.getAttribute("validationMessage");
         LOGGER.debug(String.format("Attempt to find message: %s", attribute));
         return attribute;
     }
+
     @Step("Check message not match confirm password and password is displayed")
     public boolean isMessageNotMatchConfirmPassDisplayed() {
         LOGGER.debug(String.format("Attempt to find message: %s", NOT_MATCH_CONFIRMATION_MESSAGE));
         return NOT_MATCH_CONFIRMATION_MESSAGE.isDisplayed();
     }
-
-
 }

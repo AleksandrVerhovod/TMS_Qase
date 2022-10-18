@@ -7,16 +7,15 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CreateProjectPage;
-import pages.CreateRequirementsPage;
 import pages.ProjectRepositoryPage;
 import pages.ProjectsListPage;
 import pages.services.LoginSite;
 import testdata.PrepareCreateProjectData;
-import testdata.PrepareCreateRequirementsData;
-import testdata.PrepareRegistrationData;
+
 
 public class CreateProjectTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(CreateProjectTest.class.getName());
+
     @Test
     @Description("The user creates a new project with valid values for the fields")
     public void createNewProjectTest() {
@@ -39,5 +38,4 @@ public class CreateProjectTest extends BaseTest {
         LOGGER.info("Check if button is displayed");
         Assert.assertTrue(projectRepositoryPage.isImportButtonDisplayed(), "'Import' button don't displayed ");
     }
-
 }

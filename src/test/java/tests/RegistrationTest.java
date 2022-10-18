@@ -2,7 +2,6 @@ package tests;
 
 import io.qameta.allure.Description;
 import models.RegistrationModel;
-import models.TestRunsModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -72,5 +71,4 @@ public class RegistrationTest extends BaseTest {
         LOGGER.info("Check if error message is displayed");
         Assert.assertTrue(registrationPage.isMessageNotMatchConfirmPassDisplayed(),"No message 'The password confirmation does not match.'");
     }
-
 }

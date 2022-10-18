@@ -39,6 +39,7 @@ public class CreateProjectPage extends BasePage {
         LOGGER.debug(String.format("Attempt to find button: %s", CREATE_PROJECT_BUTTON));
         return CREATE_PROJECT_BUTTON.isDisplayed();
     }
+
     @Step("Create constanta Project")
     public CreateProjectPage sendCreateConstantaProjectForm() {
         INPUT_PROJECT_NAME.sendKeys(Credentials.DEMO_QA_PROJECT);
@@ -51,6 +52,7 @@ public class CreateProjectPage extends BasePage {
         LOGGER.debug(String.format("Input project code: Description"));
         return this;
     }
+
     @Step("Create random Project")
     public CreateProjectPage sendCreateRandomProjectForm(CreateProjectModel newProjectModel) {
         INPUT_PROJECT_NAME.sendKeys(newProjectModel.getProjectName());
@@ -63,23 +65,25 @@ public class CreateProjectPage extends BasePage {
         LOGGER.debug(String.format("Input project description: %s", newProjectModel.getDescriptionProject()));
         return this;
     }
+
     @Step("Click 'Private project' button")
     public CreateProjectPage clickPrivateProjectType() {
         LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_PRIVATE_PROJECT_TYPE));
         BUTTON_PRIVATE_PROJECT_TYPE.click();
         return this;
     }
+
     @Step("Click 'Public project' button")
     public CreateProjectPage clickPublicProjectType() {
         LOGGER.debug(String.format("Attempt to click button: %s", BUTTON_PUBLIC_PROJECT_TYPE));
         BUTTON_PUBLIC_PROJECT_TYPE.click();
         return this;
     }
+
     @Step("Click 'Create project' button")
     public ProjectRepositoryPage clickCreateProjectButton() {
         LOGGER.debug(String.format("Attempt to click button: %s", CREATE_PROJECT_BUTTON));
         CREATE_PROJECT_BUTTON.click();
         return new ProjectRepositoryPage(driver);
     }
-
 }

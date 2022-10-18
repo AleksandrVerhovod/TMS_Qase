@@ -17,16 +17,16 @@ public class GenerateTestData {
 
     public static String getMilestoneQase() {
         List<String> milestones = MilestonesQase.getMelistonesQase();
-                return milestones.get(getRandomIndex(milestones.size()));
+        return milestones.get(getRandomIndex(milestones.size()));
     }
 
-    public static String getSeverity () {
+    public static String getSeverity() {
         List<String> severity = Severity.getSeverity();
         return severity.get(getRandomIndex(severity.size()));
     }
 
 
-    public static String getRoleUser () {
+    public static String getRoleUser() {
         List<String> roleUser = Role.getRole();
         return roleUser.get(getRandomIndex(roleUser.size()));
     }
@@ -55,10 +55,12 @@ public class GenerateTestData {
         List<String> layer = Layer.getLayer();
         return layer.get(getRandomIndex(layer.size()));
     }
+
     public static String getIsMilestoneDemo() {
         List<String> milestone = MilestonesDemo.getMelistonesDemo();
         return milestone.get(getRandomIndex(milestone.size()));
     }
+
     public static String getIsFlakyTestCase() {
         List<String> flaky = IsFlaky.getIsFlaky();
         return flaky.get(getRandomIndex(flaky.size()));
@@ -74,37 +76,37 @@ public class GenerateTestData {
         return autoStatus.get(getRandomIndex(autoStatus.size()));
     }
 
-    public static String getParent () {
+    public static String getParent() {
         List<String> parent = ParentRequirements.getParent();
         return parent.get(getRandomIndex(parent.size()));
     }
 
-    public static String getPlan () {
+    public static String getPlan() {
         List<String> plan = PlanTestRun.getPlan();
         return plan.get(getRandomIndex(plan.size()));
     }
 
-    public static String getEnvironment () {
+    public static String getEnvironment() {
         List<String> environment = EnvironmentTestRun.getEnvironment();
         return environment.get(getRandomIndex(environment.size()));
     }
 
-    public static String getDefaultAssignee () {
+    public static String getDefaultAssignee() {
         List<String> assignee = DefaultAssignee.getAssignee();
         return assignee.get(getRandomIndex(assignee.size()));
     }
 
-    public static String getStatusReq () {
+    public static String getStatusReq() {
         List<String> status = StatusRequirements.getStatusReq();
         return status.get(getRandomIndex(status.size()));
     }
 
-    public static String getTypeReq () {
+    public static String getTypeReq() {
         List<String> type = TypeRequirement.getTypeReq();
         return type.get(getRandomIndex(type.size()));
     }
 
-    public static String getEmail () {
+    public static String getEmail() {
         List<String> email = Emails.getEmail();
         return email.get(getRandomIndex(email.size()));
     }
@@ -124,6 +126,7 @@ public class GenerateTestData {
         faker = new Faker();
         return faker.name().fullName();
     }
+
     public static String generateJob() {
         faker = new Faker();
         return faker.job().title();
@@ -143,10 +146,12 @@ public class GenerateTestData {
         faker = new Faker();
         return faker.internet().emailAddress();
     }
+
     public static String generateProjectName() {
         faker = new Faker();
         return faker.funnyName().name();
     }
+
     public static String generateProjectCode() {
         faker = new Faker();
         return faker.letterify("?????");
@@ -203,9 +208,18 @@ public class GenerateTestData {
     }
 
 
+    public static String generateAPItitle() {
+        faker = new Faker();
+        return faker.funnyName().name();
+    }
 
+    public static String generateAPIcode() {
+        faker = new Faker();
+        return faker.code().asin();
+    }
 
-
-
-
+    public static String generateAPIDescription() {
+        faker = new Faker();
+        return faker.chuckNorris().fact();
+    }
 }

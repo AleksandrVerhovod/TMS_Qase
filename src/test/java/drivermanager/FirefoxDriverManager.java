@@ -18,5 +18,5 @@ public class FirefoxDriverManager extends DriverManager {
         options.addArguments("--headless"); //фоновый режим
         threadLocalDriver.set(new FirefoxDriver(options));
     }
-        
+
 }

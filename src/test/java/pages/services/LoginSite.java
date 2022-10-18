@@ -11,9 +11,11 @@ public class LoginSite {
 
     private static final Logger LOGGER = LogManager.getLogger(LoginSite.class.getName());
     private final WebDriver driver;
+
     public LoginSite(WebDriver driver) {
         this.driver = driver;
     }
+
     @Step("Login by no confirm user")
     public void loginForConfirm() {
         LoginPage loginPage = new LoginPage(driver);
@@ -23,6 +25,7 @@ public class LoginSite {
         LOGGER.debug("Input Login and Password for registration");
         loginPage.sendNoConfirmUserForm();
     }
+
     @Step("Login by demo user")
     public void demoLogin() {
         LoginPage loginPage = new LoginPage(driver);
