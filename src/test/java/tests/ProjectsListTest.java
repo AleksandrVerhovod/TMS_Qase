@@ -51,7 +51,7 @@ public class ProjectsListTest extends BaseTest {
                 .deleteProject();
         LOGGER.info("Project deleted");
         LOGGER.info("Check if confirm message is displayed");
-        Assert.assertFalse(projectsListPage.isProjectNameDisplayed(), "Demo project has not been deleted");
+        Assert.assertTrue(projectsListPage.isProjectNameDisplayed(), "Demo project has not been deleted");
     }
 
     @Test(priority = 3)
