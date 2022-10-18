@@ -46,8 +46,8 @@ public class CreateProjectPage extends BasePage {
         LOGGER.debug(String.format("Input project name: %s", Credentials.DEMO_QA_PROJECT));
         LOGGER.debug(String.format("Attempt to clear: %s", INPUT_PROJECT_CODE));
         INPUT_PROJECT_CODE.clear();
-        INPUT_PROJECT_CODE.sendKeys("DemoCode");
-        LOGGER.debug(String.format("Input project code: DemoCode"));
+        INPUT_PROJECT_CODE.sendKeys("DemoCodeTest");
+        LOGGER.debug(String.format("Input project code: DemoCodeTest"));
         INPUT_PROJECT_DESCRIPTION.sendKeys("Description");
         LOGGER.debug(String.format("Input project code: Description"));
         return this;
